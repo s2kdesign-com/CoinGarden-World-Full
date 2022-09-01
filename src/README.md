@@ -13,4 +13,4 @@
 
 ### How to checkout git submodules
 
-![alt text](http://url/to/img.png)
+![recurse-submodules](https://github.com/s2kdesign-com/CoinGarden-World-Full/raw/main/docs/assets/recurse-submodules.png)
