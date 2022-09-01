@@ -18,9 +18,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mobile-apps", "mobile-apps"
 		mobile-apps\README.md = mobile-apps\README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGardenWorld.Web", "back-end\CoinGardenWorld.Web\CoinGardenWorld.Web.csproj", "{682FFEE4-1B1B-43B7-9401-DB34021DB9B7}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{682FFEE4-1B1B-43B7-9401-DB34021DB9B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{682FFEE4-1B1B-43B7-9401-DB34021DB9B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{682FFEE4-1B1B-43B7-9401-DB34021DB9B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{682FFEE4-1B1B-43B7-9401-DB34021DB9B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{682FFEE4-1B1B-43B7-9401-DB34021DB9B7} = {F00D4BA7-60AD-4A94-AA1B-36D6915BE449}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {890F574E-0420-4F79-8773-9BE66EEDDFAA}
