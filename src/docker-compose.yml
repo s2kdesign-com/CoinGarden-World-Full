@@ -4,7 +4,7 @@ services:
   coingardenworld.web:
     image: ${DOCKER_REGISTRY-}coingardenworldweb
     build:
-      context: front-end/CoinGardenWorld.Web
+      context: landing-page/CoinGardenWorld.Web
       dockerfile: Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

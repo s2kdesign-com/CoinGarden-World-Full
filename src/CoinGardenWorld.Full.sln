@@ -8,9 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "back-end", "back-end", "{A3
 		back-end\README.md = back-end\README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frond-end", "frond-end", "{F00D4BA7-60AD-4A94-AA1B-36D6915BE449}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "landing-page", "landing-page", "{F00D4BA7-60AD-4A94-AA1B-36D6915BE449}"
 	ProjectSection(SolutionItems) = preProject
-		front-end\README.md = front-end\README.md
+		landing-page\README.md = landing-page\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mobile-apps", "mobile-apps", "{408E76F7-6C4A-4D3D-916A-BF6E1F714D2F}"
@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mobile-apps", "mobile-apps"
 		mobile-apps\README.md = mobile-apps\README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Web", "front-end\CoinGardenWorld.Web\CoinGardenWorld.Web.csproj", "{682FFEE4-1B1B-43B7-9401-DB34021DB9B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Web", "landing-page\CoinGardenWorld.Web\CoinGardenWorld.Web.csproj", "{682FFEE4-1B1B-43B7-9401-DB34021DB9B7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Grpc", "back-end\CoinGardenWorld.Grpc\CoinGardenWorld.Grpc.csproj", "{6A029C8F-A2B3-4225-86E0-F10A2C7745CC}"
 EndProject
