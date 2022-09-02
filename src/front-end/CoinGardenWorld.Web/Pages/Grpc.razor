@@ -1,0 +1,21 @@
+﻿@page "/grpc"
+@using global::Grpc.Net.Client
+@inject Greeter.GreeterClient client
+
+<PageTitle>Index</PageTitle>
+
+<h1>Cars from Grpc Service</h1>
+
+@if(model != null){
+<p>
+    @model.Message
+</p>
+}
+@code {
+
+    private HelloReply? model; 
+    protected override async Task OnInitializedAsync() {
+        
+        model = await client.SayHelloAsync(new HelloRequest { Name = "sss"});
+    }
+}
