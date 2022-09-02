@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mobile-apps", "mobile-apps"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Web", "landing-page\CoinGardenWorld.Web\CoinGardenWorld.Web.csproj", "{682FFEE4-1B1B-43B7-9401-DB34021DB9B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Grpc", "back-end\CoinGardenWorld.Grpc\CoinGardenWorld.Grpc.csproj", "{6A029C8F-A2B3-4225-86E0-F10A2C7745CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.LandingPage.Grpc", "back-end\CoinGardenWorld.LandingPage.Grpc\CoinGardenWorld.LandingPage.Grpc.csproj", "{6A029C8F-A2B3-4225-86E0-F10A2C7745CC}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6802AA54-D474-4FC1-B08E-4C1E6268D232}"
 EndProject
