@@ -37,8 +37,8 @@ jobs:
       id: docker_build
       uses: docker/build-push-action@v2
       with:
-        context: src/ 
-        file: src/back-end/CoinGardenWorld.LandingPage.Grpc/Dockerfile
+        context: src/back-end/CoinGardenWorld.LandingPage.Grpc/
+        file: Dockerfile
         builder: ${{ steps.buildx.outputs.name }}
         push: true
         tags: ghcr.io/s2kdesign-com/coingardenworld.landingpage_grpc:latest
