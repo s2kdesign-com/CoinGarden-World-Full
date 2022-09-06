@@ -8,7 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0  AS publish
 WORKDIR /src
 COPY . .
-RUN dotnet publish "CoinGardenWorld.LandingPage.Grpc.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "back-end/CoinGardenWorld.LandingPage.Grpc/CoinGardenWorld.LandingPage.Grpc.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

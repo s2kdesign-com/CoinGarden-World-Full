@@ -1,28 +1,22 @@
 version: '3.4'
 
 services:
-  coingardenworld.web:
-    image: ${DOCKER_REGISTRY-}coingardenworldweb
+  coingardenworld.landingpage:
+    image: ${DOCKER_REGISTRY-}coingardenworld.landingpage
     build:
-      context: landing-page/CoinGardenWorld.Web
-      dockerfile: Dockerfile
+      target: final
+      context: .
+      dockerfile: landing-page/CoinGardenWorld.Web/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
     ports:
-      - "80"
-      - "443"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-    labels:
-      - "com.microsoft.visualstudio.targetoperatingsystem=linux"
+      - 5001:80
 
   coingardenworld.grpc:
-    image: ${DOCKER_REGISTRY-}coingardenworldgrpc
+    image: ${DOCKER_REGISTRY-}coingardenworld.landingpage_grpc
     build:
-      context: back-end/CoinGardenWorld.LandingPage.Grpc
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: back-end/CoinGardenWorld.LandingPage.Grpc/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80

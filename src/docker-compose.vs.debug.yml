@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  coingardenworld.landingpage:
+    build:
+      target: final
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    ports:
+      - 5001:80
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "/bin/sh"
+      com.microsoft.visualstudio.debuggee.arguments: "-c nginx -g daemon off"
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof your_command); then kill $$PID; fi\""

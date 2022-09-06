@@ -5,16 +5,10 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS publish
 WORKDIR /src
-COPY ["back-end/CoinGardenWorld.MobileApps.Grpc/CoinGardenWorld.MobileApps.Grpc.csproj", "back-end/CoinGardenWorld.MobileApps.Grpc/"]
-RUN dotnet restore "back-end/CoinGardenWorld.MobileApps.Grpc/CoinGardenWorld.MobileApps.Grpc.csproj"
 COPY . .
-WORKDIR "/src/back-end/CoinGardenWorld.MobileApps.Grpc"
-RUN dotnet build "CoinGardenWorld.MobileApps.Grpc.csproj" -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish "CoinGardenWorld.MobileApps.Grpc.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "back-end/CoinGardenWorld.MobileApps.Grpc/CoinGardenWorld.MobileApps.Grpc.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

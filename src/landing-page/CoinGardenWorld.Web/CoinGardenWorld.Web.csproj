@@ -6,7 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     <UserSecretsId>424b402b-5b11-44b5-9ff1-61fc3775e7c4</UserSecretsId>
-	<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
 	  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
