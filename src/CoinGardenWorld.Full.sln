@@ -29,9 +29,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nft-market", "nft-market", 
 		nft-market\README.md = nft-market\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGardenWorld.NftMarket", "nft-market\CoinGardenWorld.NftMarket\CoinGardenWorld.NftMarket.csproj", "{2B3FB866-E110-4D12-8744-829973EBED1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.NftMarket", "nft-market\CoinGardenWorld.NftMarket\CoinGardenWorld.NftMarket.csproj", "{2B3FB866-E110-4D12-8744-829973EBED1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGardenWorld.Maui", "mobile-apps\CoinGardenWorld.Maui\CoinGardenWorld.Maui.csproj", "{9F16527C-F2E6-4F25-B77D-9D79EA1F6AEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Maui", "mobile-apps\CoinGardenWorld.Maui\CoinGardenWorld.Maui.csproj", "{9F16527C-F2E6-4F25-B77D-9D79EA1F6AEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGardenWorld.MobileApps.Grpc", "back-end\CoinGardenWorld.MobileApps.Grpc\CoinGardenWorld.MobileApps.Grpc.csproj", "{099B1FAE-9271-48DB-9502-0554647252A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{9F16527C-F2E6-4F25-B77D-9D79EA1F6AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F16527C-F2E6-4F25-B77D-9D79EA1F6AEA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F16527C-F2E6-4F25-B77D-9D79EA1F6AEA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{099B1FAE-9271-48DB-9502-0554647252A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{099B1FAE-9271-48DB-9502-0554647252A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{099B1FAE-9271-48DB-9502-0554647252A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{099B1FAE-9271-48DB-9502-0554647252A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{6A029C8F-A2B3-4225-86E0-F10A2C7745CC} = {A3D7C469-57EB-4673-A5F1-2253BB86BB27}
 		{2B3FB866-E110-4D12-8744-829973EBED1D} = {EB829146-E811-445E-B578-CA874F0A917E}
 		{9F16527C-F2E6-4F25-B77D-9D79EA1F6AEA} = {408E76F7-6C4A-4D3D-916A-BF6E1F714D2F}
+		{099B1FAE-9271-48DB-9502-0554647252A9} = {A3D7C469-57EB-4673-A5F1-2253BB86BB27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {890F574E-0420-4F79-8773-9BE66EEDDFAA}
