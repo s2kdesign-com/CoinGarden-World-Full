@@ -13,14 +13,14 @@
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
 
         <!-- Display name -->
-        <ApplicationTitle>CoinGardenWorld.Maui</ApplicationTitle>
+        <ApplicationTitle>CoinGarden.World</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.coingardenworld.maui</ApplicationId>
+        <ApplicationId>com.s2kdesign.coingarden.world</ApplicationId>
         <ApplicationIdGuid>2179D5A9-BBE5-42AC-A6F9-455B3CAE938C</ApplicationIdGuid>
 
         <!-- Versions -->
-        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>
 
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
