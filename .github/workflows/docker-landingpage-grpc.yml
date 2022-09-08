@@ -4,6 +4,16 @@ name: Build LandingPage.Grpc Docker
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+      - 'src/docker-compose*.yml'
+      - 'src/mobile-apps/**'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
 
 jobs:
   deploy-to-github-docker:

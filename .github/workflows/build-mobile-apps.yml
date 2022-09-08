@@ -2,7 +2,7 @@ name: Build Android, IOS, MacCatalyst, Windows
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths-ignore:
       - '**/*.md'
       - '**/*.gitignore'
@@ -12,7 +12,7 @@ on:
       - 'src/landing-page/**'
       - 'src/nft-market/**'
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
