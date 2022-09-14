@@ -46,16 +46,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Upload Release Assets
-        # You may pin to the exact commit or the version.
-        # uses: alexellis/upload-assets@5586bc227f8525a5e3525e6edf64da5350bfb5b1
-        uses: alexellis/upload-assets@0.3.0
+      
+      - name: Release Upload Assets
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: false
+          files: |
+            src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-android/*Signed.a*
+            src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-windows10.0.19041.0/win10-x64/AppPackages/CoinGardenWorld*/CoinGardenWorld*.msix
+            src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-ios/iossimulator-x64/**/*.app
+            src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-maccatalyst/maccatalyst-x64/publish/*.pkg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          # The paths to the assets you want to upload as a JSON array. You can use a glob pattern.
-          asset_paths: | 
-            coingarden-macos-ci-build/CoinGardenWorld.Maui-1.0.0.pkg
-            coingarden-windows-ci-build/CoinGardenWorld.Maui_1.0.0.1_Test/CoinGardenWorld.Maui_1.0.0.1_x64.msix
-            coingarden-android-ci-build/com.s2kdesign.coingarden.world-Signed.apk
-          
