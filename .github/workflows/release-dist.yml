@@ -19,8 +19,7 @@ jobs:
       - name: Get version
         id: get_version
         run: |
-          VERSION="$(cat resources/deployment-version"
-          RELEASE_VERSION="$VERSION.${{ github.run_number }}"
+          VERSION="1.0.${{ github.run_number }}"
           echo "::set-output name=VERSION::$VERSION"
 
       - name: Download artifact
