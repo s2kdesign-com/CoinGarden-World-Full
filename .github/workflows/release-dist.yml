@@ -15,6 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Release Mobile Artifacts
     steps:
+    
+      - name: Get version
+        id: get_version
+        run: |
+          VERSION="$(cat resources\deployment-version".${{ github.run_number }}
+          echo "::set-output name=VERSION::$VERSION"
+
       - name: Download artifact
         id: download-artifact
         uses: dawidd6/action-download-artifact@v2
@@ -43,6 +50,8 @@ jobs:
           # config-name: my-config.yml
           # disable-autolabeler: true
           publish: false
+          version: ${{ steps.get_version.outputs.VERSION }}
+          tag: ${{ steps.get_version.outputs.TAG }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
