@@ -1,9 +1,102 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
 
-<PageTitle>Index</PageTitle>
+@using CoinGardenWorld.Web.Pages.about
+@using CoinGardenWorld.Web.Pages.features
+@using CoinGardenWorld.Web.Pages.documents
+@using CoinGardenWorld.Web.Pages.problem
+@using CoinGardenWorld.Web.Pages.solution
+@using CoinGardenWorld.Web.Pages.products
+@using CoinGardenWorld.Web.Pages.tokensale
+@using CoinGardenWorld.Web.Pages.app_download
+@using CoinGardenWorld.Web.Pages.wallet
+@using CoinGardenWorld.Web.Pages.admin_intro
+@using CoinGardenWorld.Web.Pages.roadmap
+@using CoinGardenWorld.Web.Pages.team
+@using CoinGardenWorld.Web.Pages.faq
 
-<h1>Hello, world!</h1>
+<Header />
 
-Welcome to your new app.
+<section class="section no-pd overflow-hidden text-center over-up">
+    <h6 class="title title-xs tc-secondary pdb-s animated" data-animate="fadeInUp" data-delay=".8">Ico Rating</h6>
+    <ul class="rank-list">
+        <li class="rank-item animated" data-animate="fadeInUp" data-delay=".9">
+            <img src="images/logo/a.png" alt="">
+            <div class="rank-count">4.7 <span>/5</span></div>
+        </li>
+        <li class="rank-item animated" data-animate="fadeInUp" data-delay="1">
+            <img src="images/logo/b.png" alt="">
+            <div class="rank-count">A</div>
+        </li>
+        <li class="rank-item animated" data-animate="fadeInUp" data-delay="1.1">
+            <img src="images/logo/c.png" alt="">
+            <div class="rank-count">9.4 <span>/10</span></div>
+        </li>
+        <li class="rank-item animated" data-animate="fadeInUp" data-delay="1.2">
+            <img src="images/logo/d.png" alt="">
+            <div class="rank-count">4.9 <span>/5</span></div>
+        </li>
+        <li class="rank-item animated" data-animate="fadeInUp" data-delay="1.3">
+            <img src="images/logo/e.png" alt="">
+            <div class="rank-count">5 <span>/5</span></div>
+        </li>
+    </ul>
+</section>
+<!-- // -->
+<About />
+<!-- // -->
+<Features />
+<!-- // -->
+<Problem />
+<!-- // -->
+<Solution />
+<!-- // -->
+<Products />
+<!-- // -->
+<Tokensale />
+<!-- // -->
+<Documents />
+<!-- // -->
+<AppDownload />
+<!-- // -->
+<Wallet />
+<!-- // -->
+<AdminInitro />
+<!-- // -->
+<Roadmap />
+<!-- // -->
+<Team />
+<!-- // -->
+<Faq />
+<!-- // -->
+<section class="section section-m section-partners bg-light" id="partners">
+    <div class="container">
+        <!-- Block @s -->
+        <div class="nk-block block-partners">
+            <h6 class="title title-xs tc-primary text-center animated" data-animate="fadeInUp" data-delay=".1">Our Partners</h6>
+            <ul class="partner-list flex-lg-nowrap">
+                <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".2"><img src="images/partners/a.png" alt="partner"></li>
+                <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".3"><img src="images/partners/b.png" alt="partner"></li>
+                <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".4"><img src="images/partners/c.png" alt="partner"></li>
+                <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".5"><img src="images/partners/d.png" alt="partner"></li>
+                <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".6"><img src="images/partners/e.png" alt="partner"></li>
+                <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".7"><img src="images/partners/f.png" alt="partner"></li>
+                <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".8"><img src="images/partners/g.png" alt="partner"></li>
+            </ul>
+        </div>
+        <!-- Block @e -->
+    </div>
+</section>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<Footer />
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(firstRender){
+            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/scripts.js");
+            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/charts.js");
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+};
