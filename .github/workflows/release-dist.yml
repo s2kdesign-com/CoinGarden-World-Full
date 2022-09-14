@@ -57,5 +57,5 @@ jobs:
           asset_paths: | 
             coingarden-macos-ci-build/CoinGardenWorld.Maui-1.0.0.pkg
             coingarden-windows-ci-build/CoinGardenWorld.Maui_1.0.0.1_Test/CoinGardenWorld.Maui_1.0.0.1_x64.msix
-            coingarden-android-ci-build/com.s2kdesign.coingarden.world-Signed*
+            coingarden-android-ci-build/com.s2kdesign.coingarden.world-Signed.apk
           
