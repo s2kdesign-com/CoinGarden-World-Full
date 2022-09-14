@@ -143,6 +143,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     name: Release Mobile Artifacts
+    needs: [build-mac, build-ios, build-windows, build-android]
     steps:
       - name: Create Release
         id: create_release
@@ -154,13 +155,15 @@ jobs:
           # disable-autolabeler: true
           publish: false
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: steps.extract_branch.outputs.branch == 'main'
       
       - name: Upload Release Assets
         # You may pin to the exact commit or the version.
         # uses: alexellis/upload-assets@5586bc227f8525a5e3525e6edf64da5350bfb5b1
         uses: alexellis/upload-assets@0.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # The paths to the assets you want to upload as a JSON array. You can use a glob pattern.
           asset_paths: | 
