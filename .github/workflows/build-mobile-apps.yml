@@ -139,3 +139,16 @@ jobs:
         with:
           name: coingarden-macos-ci-build
           path: src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-maccatalyst/maccatalyst-x64/publish/*.pkg
+      
+      
+      - name: Release Mobile Artifacts
+      # Drafts your next Release notes as Pull Requests are merged into "master"
+        uses: release-drafter/release-drafter@v5
+        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
+        with:
+          # config-name: my-config.yml
+          # disable-autolabeler: true
+          publish: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: steps.extract_branch.outputs.branch == 'main'
