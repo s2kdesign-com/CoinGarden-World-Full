@@ -1,0 +1,57 @@
+name: Deploy LandingPage.Web Github Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+      - 'src/docker-compose*.yml'
+      - 'src/mobile-apps/**'
+      - 'src/nft-market/**'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  DOTNET_NOLOGO: true                     # Disable the .NET logo
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true # Disable the .NET first time experience
+  DOTNET_CLI_TELEMETRY_OPTOUT: true       # Disable sending .NET CLI telemetry
+
+jobs:
+  deploy-to-github-pages:
+    # use ubuntu-latest image to run steps on
+    runs-on: ubuntu-latest
+    steps:
+    # uses GitHub's checkout action to checkout code form the master branch
+    - uses: actions/checkout@v2
+    
+    # sets up .NET Core SDK 
+    - name: Setup .NET 7
+      uses: actions/setup-dotnet@c0d4ad69d8bd405d234f1c9166d383b7a4f69ed8
+      with:
+        dotnet-version: 7.0.x
+        include-prerelease: true
+      
+    # publishes Blazor project to the release-folder
+    - name: Publish .NET Core Project
+      run: dotnet publish src/landing-page/CoinGardenWorld.Web/CoinGardenWorld.Web.csproj -c Release -o release --nologo /p:AssemblyVersion=1.0.0.${{ github.run_number }} /p:Version=1.0.0.${{ github.run_number }}
+    
+    # changes the base-tag in index.html from '/' to 'CoinGarden-World' to match GitHub Pages repository subdirectory
+    - name: Change base-tag in index.html from / to CoinGarden-World-Full
+      run: sed -i 's/<base href="\/" \/>/<base href="\/CoinGarden-World-Full\/" \/>/g' release/wwwroot/index.html
+
+    # copy index.html to 404.html to serve the same file when a file is not found
+    - name: copy index.html to 404.html
+      run: cp release/wwwroot/index.html release/wwwroot/404.html
+              
+    - name: Commit wwwroot to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: release/wwwroot
