@@ -51,7 +51,7 @@ jobs:
           # disable-autolabeler: true
           publish: false
           version: ${{ steps.get_version.outputs.VERSION }}
-          tag: ${{ steps.get_version.outputs.TAG }}
+          tag: ${{ steps.get_version.outputs.VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
