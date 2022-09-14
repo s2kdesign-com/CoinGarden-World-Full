@@ -10,8 +10,6 @@ on:
       - 'src/docker-compose*.yml'
       - 'src/mobile-apps/**'
       - 'src/nft-market/**'
-  pull_request:
-    branches: [ main ]
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
