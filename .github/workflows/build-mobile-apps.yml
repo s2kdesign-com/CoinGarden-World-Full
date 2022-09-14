@@ -154,7 +154,7 @@ jobs:
           # disable-autolabeler: true
           publish: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         if: steps.extract_branch.outputs.branch == 'main'
       
       - name: Upload Release Assets
