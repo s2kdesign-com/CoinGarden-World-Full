@@ -63,10 +63,11 @@ jobs:
         with:
           tag_name: ${{ steps.get_version.outputs.VERSION }}
           draft: false
+          # TODO: Missing Apple app, the build is with a lot of files 
+           # src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-ios/iossimulator-x64/**/*.app
           files: |
-            src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-android/*Signed.a*
-            src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-windows10.0.19041.0/win10-x64/AppPackages/CoinGardenWorld*/CoinGardenWorld*.msix
-            src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-ios/iossimulator-x64/**/*.app
-            src/mobile-apps/CoinGardenWorld.Maui/bin/Release/net6.0-maccatalyst/maccatalyst-x64/publish/*.pkg
+            coingarden-android-ci-build/*Signed.a*
+            coingarden-windows-ci-build/CoinGardenWorld*/CoinGardenWorld*.msix
+            coingarden-macos-ci-build/*.pkg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
