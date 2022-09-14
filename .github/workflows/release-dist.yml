@@ -49,7 +49,7 @@ jobs:
         with:
           # config-name: my-config.yml
           # disable-autolabeler: true
-          publish: false
+          publish: true
           version: ${{ steps.get_version.outputs.VERSION }}
           tag: ${{ steps.get_version.outputs.VERSION }}
         env:
