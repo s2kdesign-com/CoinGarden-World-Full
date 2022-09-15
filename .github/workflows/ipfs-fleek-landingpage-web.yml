@@ -16,7 +16,7 @@ on:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "fleek"
+  group: "fleek-landingpage"
   cancel-in-progress: true
 
 env:

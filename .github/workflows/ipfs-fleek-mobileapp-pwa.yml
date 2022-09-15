@@ -15,7 +15,7 @@ on:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "fleek"
+  group: "fleek-mobile-app"
   cancel-in-progress: true
 
 env:
