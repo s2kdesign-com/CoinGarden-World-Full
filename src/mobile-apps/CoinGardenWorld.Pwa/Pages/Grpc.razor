@@ -1,0 +1,30 @@
+﻿@page "/grpc"
+@using CoinGardenWorld.MobileApps.Grpc
+@inject Greeter.GreeterClient Greeter
+
+<PageTitle>Grpc call to the server</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (model == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div>
+        @model.Message
+    </div>
+}
+
+@code {
+    private HelloReply? model;
+
+    protected override async Task OnInitializedAsync()
+    {
+        model = await Greeter.SayHelloAsync(new HelloRequest { Name = "Test" });
+    }
+
+}
