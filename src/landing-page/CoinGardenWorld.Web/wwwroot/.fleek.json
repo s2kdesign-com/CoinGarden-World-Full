@@ -1,0 +1,14 @@
+{
+  "site": {
+    "id": "176c498c-59f0-4928-a09a-70fccb7e7d3e",
+    "team": "30c855ee-7947-4946-98f8-65ffd37866ab",
+    "platform": "ipfs",
+    "source": "ipfs",
+    "name": "small-lab-3428"
+  },
+  "build": {
+    "baseDir": "",
+    "publicDir": "",
+    "rootDir": ""
+  }
+}

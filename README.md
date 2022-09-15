@@ -1,6 +1,7 @@
 # 🌍 CoinGarden.World 🌏
 ---
-### 🌷 Web3 Application for gardening, growing, selling and earning crypto from your flowers 🌺
+### 🌷 Web3 Infrastructure for gardening, growing,  🌺
+### 🌻 selling and earning crypto from your flowers 🌼
 ---
 ## 🔗 Official site : https://coingarden.world/
 ---
@@ -14,7 +15,7 @@ https://docs.coingarden.world/v/bg/
 
 | Application | Cloud | Url | Status |
 | - | - | - | - |
-| Landing Page | IPFS | https://purple-wildflower-6660.on.fleek.co/ |  |
+| Landing Page | IPFS | https://small-lab-3428.on.fleek.co/ | [![Deploy LandingPage.Web IPFS - Fleek](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-landingpage-web.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-landingpage-web.yml) |
 | Landing Page | Azure Cloud | https://coingarden.world/ |  |
 | Landing Page | Github Pages | https://s2kdesign-com.github.io/CoinGarden-World-Full/ | [![Deploy LandingPage.Web Github Pages](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/gh-pages-landingpage-web.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/gh-pages-landingpage-web.yml) |
 
