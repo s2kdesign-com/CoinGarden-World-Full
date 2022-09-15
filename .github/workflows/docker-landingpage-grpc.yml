@@ -66,7 +66,7 @@ jobs:
         tags: ghcr.io/s2kdesign-com/coingardenworld.landingpage_grpc:latest
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
-      if: steps.extract_branch.outputs.branch == 'main'
+      if: github.ref == 'refs/heads/main'
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}

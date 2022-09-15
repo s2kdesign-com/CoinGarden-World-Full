@@ -32,7 +32,7 @@ https://docs.coingarden.world/v/bg/
 [![Build Android, IOS, MacCatalyst, Windows](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/build-mobile-apps.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/build-mobile-apps.yml)
 
 PWA (.NET Blazor) -
-
+[![Build MobileApps.Pwa Docker](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-pwa.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-pwa.yml)
 
 | Supported OS Platform | Version | Download | 
 | ------------- | ------------- | ------------- | 
