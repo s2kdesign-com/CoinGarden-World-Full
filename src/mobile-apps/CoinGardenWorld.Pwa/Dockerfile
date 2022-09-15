@@ -9,7 +9,7 @@ FROM nginx:alpine AS final
 RUN apk add bash icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib
 WORKDIR /usr/share/nginx/html
 COPY --from=publish /app/publish/wwwroot .
-COPY "mobile-apps/CoinGardenWorld.Pwa/nginx.conf /etc/nginx/nginx.conf
+COPY mobile-apps/CoinGardenWorld.Pwa/nginx.conf /etc/nginx/nginx.conf
 SHELL ["/bin/bash", "-c"]
 CMD /usr/sbin/nginx -g "daemon off;"
 EXPOSE 80

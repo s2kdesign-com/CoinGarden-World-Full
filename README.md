@@ -26,13 +26,11 @@ https://docs.coingarden.world/v/bg/
 | ------------- | ------------- | ------------- | ------------- | ------------- | 
 | Landing Page | 1.0.0 | https://localhost:5001  | [latest](https://github.com/s2kdesign-com/CoinGarden-World-Full/pkgs/container/coingardenworld.landingpage_web) | [![Build LandingPage.Web Docker](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-landingpage-web.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-landingpage-web.yml) |
 | Landing Page - GRPC | 1.0.0 | https://localhost:7167  | [latest](https://github.com/s2kdesign-com/CoinGarden-World-Full/pkgs/container/coingardenworld.landingpage_grpc) | [![Build LandingPage.Grpc Docker](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-landingpage-grpc.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-landingpage-grpc.yml) |
+| Mobile App - PWA | 1.0.0 | https://localhost:7140  | [latest](https://github.com/s2kdesign-com/CoinGarden-World-Full/pkgs/container/coingardenworld.landingpage_grpc) | [![Build MobileApps.Pwa Docker](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-pwa.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-pwa.yml) |
 ---
 ### 📱 Mobile Applications
 .NET MAUI (Multi-platform App UI ) - 
 [![Build Android, IOS, MacCatalyst, Windows](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/build-mobile-apps.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/build-mobile-apps.yml)
-
-PWA (.NET Blazor) -
-[![Build MobileApps.Pwa Docker](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-pwa.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-pwa.yml)
 
 | Supported OS Platform | Version | Download | 
 | ------------- | ------------- | ------------- | 
