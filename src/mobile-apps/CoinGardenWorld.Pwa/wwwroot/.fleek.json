@@ -1,0 +1,14 @@
+{
+  "site": {
+    "id": "bd2d128a-c278-44c6-96b8-0695ed5f8caa",
+    "team": "30c855ee-7947-4946-98f8-65ffd37866ab",
+    "platform": "ipfs",
+    "source": "ipfs",
+    "name": "royal-queen-5695"
+  },
+  "build": {
+    "baseDir": "",
+    "publicDir": "",
+    "rootDir": ""
+  }
+}

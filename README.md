@@ -15,10 +15,10 @@ https://docs.coingarden.world/v/bg/
 
 | Application | Cloud | Url | Status |
 | - | - | - | - |
-| Landing Page | IPFS | https://small-lab-3428.on.fleek.co/ | [![Deploy LandingPage.Web IPFS - Fleek](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-landingpage-web.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-landingpage-web.yml) |
+| Landing Page | IPFS / Fleek | https://coingardenworld.on.fleek.co/ | [![Deploy LandingPage.Web IPFS - Fleek](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-landingpage-web.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-landingpage-web.yml) |
 | Landing Page | Azure Cloud | https://coingarden.world/ |  |
 | Landing Page | Github Pages | https://s2kdesign-com.github.io/CoinGarden-World-Full/ | [![Deploy LandingPage.Web Github Pages](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/gh-pages-landingpage-web.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/gh-pages-landingpage-web.yml) |
-
+| Mobile App | IPFS / Fleek | https://coingardenworld-app.on.fleek.co/ |  |
 
 ---
 ### 🚢 Docker Images
