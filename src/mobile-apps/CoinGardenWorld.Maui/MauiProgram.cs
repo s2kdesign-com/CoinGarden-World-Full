@@ -20,6 +20,9 @@ namespace CoinGardenWorld.Maui
 		builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
 
+            // Add CoinGardenWorld.MobileTheme GRPC, Pages and Components
+            builder.Services.AddTheme();
+
             builder.Services.AddSingleton<WeatherForecastService>();
 
             return builder.Build();
