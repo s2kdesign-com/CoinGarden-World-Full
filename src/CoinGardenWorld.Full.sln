@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.NftMarket",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Maui", "mobile-apps\CoinGardenWorld.Maui\CoinGardenWorld.Maui.csproj", "{9F16527C-F2E6-4F25-B77D-9D79EA1F6AEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGardenWorld.MobileApps.Grpc", "back-end\CoinGardenWorld.MobileApps.Grpc\CoinGardenWorld.MobileApps.Grpc.csproj", "{099B1FAE-9271-48DB-9502-0554647252A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.MobileApps.Grpc", "back-end\CoinGardenWorld.MobileApps.Grpc\CoinGardenWorld.MobileApps.Grpc.csproj", "{099B1FAE-9271-48DB-9502-0554647252A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGardenWorld.Pwa", "mobile-apps\CoinGardenWorld.Pwa\CoinGardenWorld.Pwa.csproj", "{488F837C-3699-4594-8739-20982B02B26D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{099B1FAE-9271-48DB-9502-0554647252A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{099B1FAE-9271-48DB-9502-0554647252A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{099B1FAE-9271-48DB-9502-0554647252A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{488F837C-3699-4594-8739-20982B02B26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{488F837C-3699-4594-8739-20982B02B26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{488F837C-3699-4594-8739-20982B02B26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{488F837C-3699-4594-8739-20982B02B26D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{2B3FB866-E110-4D12-8744-829973EBED1D} = {EB829146-E811-445E-B578-CA874F0A917E}
 		{9F16527C-F2E6-4F25-B77D-9D79EA1F6AEA} = {408E76F7-6C4A-4D3D-916A-BF6E1F714D2F}
 		{099B1FAE-9271-48DB-9502-0554647252A9} = {A3D7C469-57EB-4673-A5F1-2253BB86BB27}
+		{488F837C-3699-4594-8739-20982B02B26D} = {408E76F7-6C4A-4D3D-916A-BF6E1F714D2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {890F574E-0420-4F79-8773-9BE66EEDDFAA}
