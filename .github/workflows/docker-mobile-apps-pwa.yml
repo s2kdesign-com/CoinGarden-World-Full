@@ -9,7 +9,7 @@ on:
       - '**/*.gitignore'
       - '**/*.gitattributes'
       - 'src/docker-compose*.yml'
-      - 'src/mobile-apps/**'
+      - 'src/mobile-apps/CoinGardenWorld.Maui/**'
   pull_request:
     branches: [ main ]
   workflow_dispatch:
