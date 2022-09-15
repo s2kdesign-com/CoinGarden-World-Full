@@ -28,7 +28,12 @@ https://docs.coingarden.world/v/bg/
 | Landing Page - GRPC | 1.0.0 | https://localhost:7167  | [latest](https://github.com/s2kdesign-com/CoinGarden-World-Full/pkgs/container/coingardenworld.landingpage_grpc) | [![Build LandingPage.Grpc Docker](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-landingpage-grpc.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-landingpage-grpc.yml) |
 ---
 ### 📱 Mobile Applications
+.NET MAUI (Multi-platform App UI ) - 
 [![Build Android, IOS, MacCatalyst, Windows](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/build-mobile-apps.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/build-mobile-apps.yml)
+
+PWA (.NET Blazor) -
+
+
 | Supported OS Platform | Version | Download | 
 | ------------- | ------------- | ------------- | 
 | Android - 24.0 | 1.0.0 | [Latest](https://github.com/s2kdesign-com/CoinGarden-World-Full/releases/latest/download/com.s2kdesign.coingarden.world-Signed.apk) | 
