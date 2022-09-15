@@ -11,12 +11,9 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-builder.Services.AddSingleton(services =>
-{
-    var baseUri = "https://localhost:7142/";
-    var channel = GrpcChannel.ForAddress(baseUri, new GrpcChannelOptions { HttpHandler = new GrpcWebHandler(new HttpClientHandler()) });
-    return new Greeter.GreeterClient(channel);
-});
+// Add CoinGardenWorld.MobileTheme GRPC, Pages and Components
+builder.Services.AddTheme();
+
 builder.Services.AddMsalAuthentication(options =>
 {
     builder.Configuration.Bind("AzureAd", options.ProviderOptions.Authentication);
