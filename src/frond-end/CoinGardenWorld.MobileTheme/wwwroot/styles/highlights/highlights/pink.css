@@ -1,0 +1,59 @@
+/* Generating Color Pack*/
+.color-highlight {
+  color: #fb3365 !important;
+}
+
+.bg-highlight {
+  background-color: #fb3365 !important;
+  color: #FFF !important;
+}
+
+.border-highlight {
+  border-color: #fb3365 !important;
+}
+
+.gradient-highlight {
+  background-image: linear-gradient(to bottom, #ff5982, #fb3365) !important;
+}
+
+.splide__pagination__page.is-active {
+  background-color: #fb3365 !important;
+}
+
+.footer-bar-1 .active-nav i,
+.footer-bar-1 .active-nav span {
+  color: #fb3365 !important;
+}
+
+.footer-bar-2 .active-nav {
+  border-bottom: solid 3px #fb3365;
+}
+
+.footer-bar-3 .active-nav {
+  border-top: solid 3px #fb3365;
+}
+
+.footer-bar-4 .active-nav {
+  background-color: #fb3365;
+}
+
+#footer-bar .circle-nav-1::after {
+  background-color: #fb3365;
+}
+
+#footer-bar .circle-nav-2::after {
+  background-color: #fb3365;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #fb3365;
+}
+
+.color-highlight {
+  color: #fb3365;
+}
+
+.bg-highlight {
+  background-color: #fb3365;
+  color: #FFF !important;
+}

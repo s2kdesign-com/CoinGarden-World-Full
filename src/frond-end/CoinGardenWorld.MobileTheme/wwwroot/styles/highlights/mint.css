@@ -1,0 +1,52 @@
+/* Generating Color Pack*/
+.color-highlight {
+  color: #37BC9B !important;
+}
+
+.bg-highlight {
+  background-color: #37BC9B !important;
+  color: #FFF !important;
+}
+
+.border-highlight {
+  border-color: #37BC9B !important;
+}
+
+.gradient-highlight {
+  background-image: linear-gradient(to bottom, #48CFAD, #37BC9B) !important;
+}
+
+.splide__pagination__page.is-active {
+  background-color: #37BC9B !important;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #37BC9B;
+}
+
+.color-highlight {
+  color: #37BC9B;
+}
+
+.bg-highlight {
+  background-color: #37BC9B;
+  color: #FFF !important;
+}
+
+#footer-bar .active-nav i {
+  background-image: linear-gradient(to bottom, #48CFAD, #37BC9B) !important;
+  color: #FFF !important;
+}
+
+#footer-bar .active-nav i::after {
+  transform: scale(0.8) translateY(5px) translateZ(0px);
+  filter: blur(12px);
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+}
