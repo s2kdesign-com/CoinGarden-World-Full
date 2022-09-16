@@ -1,0 +1,127 @@
+@page "/mobile-app"
+@inject IJSRuntime JSRuntime
+
+<PageTitle> Mobile App </PageTitle>
+
+<header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
+  <MainMenu />
+  <!-- Banner @s -->
+  <div class="header-banner bg-theme-grad">
+      <div class="nk-banner">
+          <div class="banner banner-page">
+              <div class="banner-wrap">
+                  <div class="container">
+                      <div class="row justify-content-center">
+                          <div class="col-xl-6 col-lg-9">
+                              <div class="banner-caption cpn tc-light text-center">
+                                  <div class="cpn-head">
+                                      <h2 class="title ttu">Mobile App</h2>
+                                      <p>A mobile application or app is a computer program or software application designed to run on a mobile device such as a phone, tablet, or watch. Mobile applications often stand in contrast to desktop applications which are designed to run on desktop computers, and web applications which run in mobile web browsers rather than directly on the mobile device.</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div><!-- .nk-banner -->
+      <div class="nk-ovm mask-f mask-contain-bottom shape-a2"></div>
+      <!-- Place Particle Js -->
+      <div id="particles-bg" class="particles-container particles-bg"></div>
+  </div>
+  <!-- .header-banner @e -->
+</header>
+
+<section class="section ov-h">
+    <!-- Block @s -->
+    <div class="nk-block nk-block-features">
+        <div class="container">
+            <div class="row align-items-center gutter-vr-30px">
+                <div class="col-lg-5">
+                    <div class="nk-block-text">
+                        <h2 class="title title-thin title-dark">Meet Our Best <strong class="text-primary-alt">Features</strong> <br>for Linum Wallet</h2>
+                        <p>We have many more feature that impress you. <br class="d-none d-lg-block">Don’t be late to <a href="#" class="link link-primary link-thin link-underline">download</a> our app.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <div class="feature card card-s2 ov-h">
+                                <div class="feature-text">
+                                    <h5 class="title title-md">All coin control</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore amet</p>
+                                </div>
+                                <div class="feature-icon feature-icon-bg">
+                                    <img src="images/icons/icon-o.png" alt="feature">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature card card-s2 ov-h">
+                                <div class="feature-text">
+                                    <h5 class="title title-md">Currencies simplified</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore amet </p>
+                                </div>
+                                <div class="feature-icon feature-icon-bg">
+                                    <img src="images/icons/icon-p.png" alt="feature">
+                                </div>
+                            </div>
+                            <div class="feature card card-s2 ov-h">
+                                <div class="feature-text">
+                                    <h5 class="title title-md">Multiple currency</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore amet</p>
+                                </div>
+                                <div class="feature-icon feature-icon-bg">
+                                    <img src="images/icons/icon-q.png" alt="feature">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .block @e -->
+</section>
+<!-- // -->
+<div class="section ov-h bg-light">
+    <!-- .block @s -->
+    <div class="nk-block nk-block-download">
+        <div class="container">
+            <div class="row align-items-center gutter-vr-30px justify-content-between">
+                <div class="col-md-5 col-mb-8 m-auto order-last order-md-first">
+                    <div class="nk-block-img">
+                        <img src="images/app-screens/sc-large-p.png" alt="app">
+                    </div>
+                </div>
+                <div class="col-md-7 col-lg-6">
+                    <div class="nk-block-text pb-md-5 text-center text-md-start">
+                        <h2 class="title title-thin title-dark">Don’t late to <strong class="text-primary-alt">Download</strong> <br>Linum Wallet App</h2>
+                        <p>We have many more feature that impress you.</p>
+                        <ul class="btn-grp btn-grp-s2">
+                            <li><a href="#" class="btn-download google-play"><img src="images/google-play.png" alt="img"></a></li>
+                            <li><a href="#" class="btn-download app-store"><img src="images/apps-store.png" alt="img"></a></li>
+                            <li class="qr-code"><img src="images/icon-wallet.png" alt="img">
+                                <span class="qr-list">
+                                    <img src="images/qr-apple.png" alt="img">
+                                    <img src="images/qr-android.png" alt="img">
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .block @e -->
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/scripts.js");
+            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/charts.js");
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+};

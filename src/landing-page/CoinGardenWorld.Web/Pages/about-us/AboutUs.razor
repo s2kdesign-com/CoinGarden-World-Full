@@ -1,0 +1,104 @@
+@page "/about-us"
+@inject IJSRuntime JSRuntime
+
+<PageTitle> About us </PageTitle>
+
+<header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
+  <MainMenu />
+  <!-- Banner @s -->
+  <div class="header-banner bg-theme-grad">
+      <div class="nk-banner">
+          <div class="banner banner-page">
+              <div class="banner-wrap">
+                  <div class="container">
+                      <div class="row justify-content-center">
+                          <div class="col-xl-6 col-lg-9">
+                              <div class="banner-caption cpn tc-light text-center">
+                                  <div class="cpn-head">
+                                      <h2 class="title ttu">About Coin Garden World</h2>
+                                      <p>Lorem ipsum daret in.</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div><!-- .nk-banner -->
+      <div class="nk-ovm mask-f mask-contain-bottom shape-a2"></div>
+      <!-- Place Particle Js -->
+      <div id="particles-bg" class="particles-container particles-bg"></div>
+  </div>
+  <!-- .header-banner @e -->
+</header>
+
+<!-- // -->
+<section class="section bg-light section-about">
+    <div class="container">
+        <!-- Block @s -->
+        <div class="nk-block">
+            <div class="row gutter-vr-30px align-items-center">
+                <div class="col-lg-6">
+                    <div class="nk-block-text">
+                        <h2 class="title title-dark title-thin">About Coin Garden World</h2>
+                        <p><strong>ICO Crypto is #1 best selling ICO Landing</strong> page, which helps you lunch and introduce your ICO Website. We designed it very carefully to make it more attractive, useful and fit any kind of ICO/Crypto website. </p>
+                        <p>ICO Crypto sectetur adipiscing elit, sed do eiusmod tempor incididunt uteop labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercit ullamco laboris nisi commodo consequat.</p>
+                        <p>We create cryptocurrency dipiscing elit, sed do eiusmod tempor incididunt uteop labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercit ullamco laboris nisi commodo consequat.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="nk-block-video">
+                        <img src="images/video/a.png" alt="video">
+                        <a href="https://www.youtube.com/watch?v=SSo_EIwHSd4" class="nk-block-video-play video-popup btn-play btn-play-light"><em class="fas fa-play"></em></a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .nk-block @e -->
+        <div class="hr"></div>
+        <!-- Block @s -->
+        <div class="nk-block nk-block-about">
+            <div class="row gutter-vr-30px align-items-center justify-content-between">
+                <div class="col-md-4 col-lg-3">
+                    <div class="nk-block-text">
+                        <h2 class="title title-lg title-dark title-thin">ICO Crypto <br>you can trust</h2>
+                    </div>
+                </div>
+                <div class="col-md-7 col-lg-8">
+                    <div class="nk-block-text">
+                        <p class="lead">We're build a comprehensive template to help to create ICO Website with ultimate simplicity &amp; easy to use. In ICO Crypto, we believe that, adipiscing elit do eiusmod tempor incididunt uteop labore et dolore magna aliqua. </p>
+                        <p>Ut enim ad minim veniam, nostrud exercit ullamco laboris nisi commodo consequat. Tempor incididunt uteop labore et dolore magna aliqua. Ut enim ad minim veniam ostrud exercit.</p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .nk-block @e -->
+        <div class="hr"></div>
+        <!-- Block @s -->
+        <div class="nk-block nk-block-about">
+            <div class="row gutter-vr-30px align-items-center justify-content-between">
+                <div class="col-md-4 col-lg-3">
+                    <div class="nk-block-text">
+                        <h2 class="title title-lg title-dark title-thin">Our Mission</h2>
+                    </div>
+                </div>
+                <div class="col-md-7 col-lg-8">
+                    <div class="nk-block-text">
+                        <p class="lead">Our Mission is to create next generation ICO Landing Page template. Ut enim ad minim veniam, nostrud exercit ullamco laboris nisi commodo. Tempor incididunt uteop labore et dolore magna aliqua nostrud exercit.</p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .nk-block @e -->
+    </div>
+</section>
+<!-- // -->
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/scripts.js");
+            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/charts.js");
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+};

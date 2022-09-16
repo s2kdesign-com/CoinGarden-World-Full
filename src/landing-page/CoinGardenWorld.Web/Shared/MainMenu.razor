@@ -1,0 +1,71 @@
+@inject NavigationManager NavigationManager
+
+<div class="header-main">
+    <div class="header-container container">
+        <div class="header-wrap">
+        <!-- Logo @s -->
+        <div class="header-logo header-logo-ls logo animated" data-animate="fadeInDown" data-delay=".65">
+            <a href="./" class="logo-link">
+                <img class="logo-dark" src="images/logo.png" srcset="images/logo2x.png 2x" alt="logo">
+                <img class="logo-light" src="images/logo-white.png" srcset="images/logo-white2x.png 2x" alt="logo">
+            </a>
+            <div class="language-switcher language-switcher-s3 toggle-wrap">
+                <a class="toggle-tigger" href="#">EN</a>
+                <ul class="toggle-class toggle-drop text-center drop-list drop-list-xs">
+                    <li><a href="#">Fr</a></li>
+                    <li><a href="#">Ch</a></li>
+                    <li><a href="#">Hi</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Toogle @s -->
+        <div class="header-nav-toggle">
+            <a href="#" class="navbar-toggle" data-menu-toggle="example-menu-04">
+                <div class="toggle-line">
+                    <span></span>
+                </div>
+            </a>
+        </div>
+        <!-- Menu @s -->
+        <div class="header-navbar header-navbar-s3">
+            <nav class="header-menu justify-content-between" id="example-menu-04">
+                <ul class="menu menu-s2 animated" data-animate="fadeInDown" data-delay=".75">
+                    <li class="menu-item">
+                        <NavLink class="menu-link nav-link" href="/" Match="@NavLinkMatch.All"> Home </NavLink>
+                    </li>
+                    <li class="menu-item">
+                        <NavLink class="menu-link nav-link" href="/about-us"> About us </NavLink>
+                    </li>
+                    <li class="menu-item">
+                        <NavLink class="menu-link nav-link" href="/mobile-app"> Mobile App </NavLink>
+                    </li>
+                    <li class="menu-item">
+                        <NavLink class="menu-link nav-link" href="/nft-market"> NFT Market </NavLink>
+                    </li>
+                    <li class="menu-item">
+                        <NavLink class="menu-link nav-link" href="/charities"> Charities </NavLink>
+                    </li>
+                    <li class="menu-item">
+                        <NavLink class="menu-link nav-link" href="/token"> Token </NavLink>
+                    </li>
+                    <li class="menu-item">
+                        <NavLink class="menu-link nav-link" href="/contact"> Contact </NavLink>
+                    </li>
+                </ul>
+                <ul class="menu-btns animated" data-animate="fadeInDown" data-delay=".85">
+                    <li>
+                        <NavLink href="#" data-bs-toggle="modal" data-bs-target="#register-popup" class="btn btn-md btn-auto btn-grad no-change">
+                            <span>Sign Up</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink href="#" data-bs-toggle="modal" data-bs-target="#login-popup" class="btn btn-md btn-auto btn-grad no-change">
+                            <span>Log In</span>
+                        </NavLink>
+                    </li>
+                </ul>
+            </nav>
+        </div><!-- .header-navbar @e -->
+        </div>
+    </div>
+</div><!-- .header-main @e -->

@@ -7884,7 +7884,8 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 
 .no-text-shadow { text-shadow: none !important; }
 
-.animated, .animate.key { animation-duration: 0.6s; z-index: 9; visibility: hidden; animation-fill-mode: both; }
+/*if content need add  visibility: hidden */
+.animated, .animate.key { animation-duration: 0.6s; z-index: 9;  animation-fill-mode: both; }
 
 @-webkit-keyframes fadeIn { from { opacity: 0; }
   to { opacity: 1; } }
