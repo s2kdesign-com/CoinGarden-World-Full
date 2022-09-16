@@ -18,13 +18,13 @@ namespace CoinGardenWorld.Maui
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
-            using var stream = FileSystem.OpenAppPackageFileAsync("appsettings.json").Result;
+            //using var stream = FileSystem.OpenAppPackageFileAsync("appsettings.json").Result;
 
-            var config = new ConfigurationBuilder()
-                .AddJsonStream(stream)
-                .Build();
+            //var config = new ConfigurationBuilder()
+            //    .AddJsonStream(stream)
+            //    .Build();
 
-            builder.Configuration.AddConfiguration(config);
+            //builder.Configuration.AddConfiguration(config);
 
             // Add authorization (do not MSAL its not working with MAUI)
             builder.Services.AddAuthorizationCore();
