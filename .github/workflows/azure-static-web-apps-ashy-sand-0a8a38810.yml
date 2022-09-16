@@ -1,0 +1,66 @@
+name: Deploy LandingPage.Web Azure
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - master
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_SAND_0A8A38810 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: "upload"
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: "/src/landing-page/CoinGardenWorld.Web" # App source code path
+          #api_location: "/src/Web/LandingPage/LandingPage.FunctionAPI" # Api source code path - optional
+          app_artifact_location: "wwwroot" # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+      - name: Easy Zip Files
+        if: always()
+        # You may pin to the exact commit or the version.
+        # uses: vimtor/action-zip@5f1c4aa587ea41db1110df6a99981dbe19cee310
+        uses: vimtor/action-zip@v1
+        with:
+          # Files or directories to zip
+          files: ${{ github.workspace }}/bin/staticsites/ss-oryx
+          # Name of output zip file
+          # dest: # optional, default is result.zip
+          # Whether to add subdirectories to simply zip all files to the root
+          # recursive: # optional, default is true
+      - name: Upload a Build Artifact
+        if: always()
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          # Artifact name
+          name: result
+          path: ${{ github.workspace }}/result.zip
+     
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_SAND_0A8A38810 }}
+          action: "close"
