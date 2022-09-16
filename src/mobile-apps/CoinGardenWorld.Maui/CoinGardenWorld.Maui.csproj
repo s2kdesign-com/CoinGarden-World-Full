@@ -53,4 +53,10 @@
       <ProjectReference Include="..\..\frond-end\CoinGardenWorld.MobileTheme\CoinGardenWorld.MobileTheme.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <MauiAsset Update="Resources\Raw\appsettings.json">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </MauiAsset>
+    </ItemGroup>
+
 </Project>
