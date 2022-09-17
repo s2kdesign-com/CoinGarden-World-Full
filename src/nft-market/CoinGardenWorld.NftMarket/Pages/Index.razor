@@ -1,5 +1,5 @@
 ﻿@page "/"
-
+@inject HttpClient httpClient
 <PageTitle>Index</PageTitle>
 
 <h1>Hello, world!</h1>
@@ -7,3 +7,18 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<span>
+    @Message
+</span>
+
+@code{
+    private string Message { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Message = await httpClient.GetFromJsonAsync<string>("api/testfunc");
+    }
+
+
+}

@@ -21,9 +21,8 @@ namespace CoinGardenWorld.Store.AzureFunctionApi
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
-            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
 
-            response.WriteString("Welcome to Azure Functions!");
+            response.WriteAsJsonAsync( "Hello from Azure Functions" );
 
             return response;
         }
