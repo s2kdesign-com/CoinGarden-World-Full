@@ -15,8 +15,8 @@ namespace CoinGardenWorld.Store.AzureFunctionApi
             _logger = loggerFactory.CreateLogger<Hello>();
         }
 
-        [Function("Hello")]
-        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
+        [Function("SayHello")]
+        public HttpResponseData SayHello([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
