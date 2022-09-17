@@ -14,9 +14,13 @@
   * [1. Добави цвете като NFT](arkhitektura/nft-magazin-za-cvetya/1.-dobavi-cvete-kato-nft.md)
   * [2. Продай NFT снимка](arkhitektura/nft-magazin-za-cvetya/2.-prodai-nft-snimka.md)
   * [3. Продай реално цвете](arkhitektura/nft-magazin-za-cvetya/3.-prodai-realno-cvete.md)
-* [Дарения и каузи 🤠](arkhitektura/dareniya-i-kauzi.md)
-* [МетаСвят 🌐](arkhitektura/metasvyat.md)
-* [GRDN - Крипто Токен](arkhitektura/grdn-kripto-token.md)
+* [Дарения и каузи 🤠](arkhitektura/dareniya-i-kauzi/README.md)
+  * [1. Как да спасиш](arkhitektura/dareniya-i-kauzi/1.-kak-da-spasish.md)
+  * [2. Как да дариш](arkhitektura/dareniya-i-kauzi/2.-kak-da-darish.md)
+* [МетаСвят 🌐](arkhitektura/metasvyat/README.md)
+  * [1. Започни игра](arkhitektura/metasvyat/1.-zapochni-igra.md)
+* [GRDN - Крипто Токен](arkhitektura/grdn-kripto-token/README.md)
+  * [1. Токеномика](arkhitektura/grdn-kripto-token/1.-tokenomika.md)
 
 ## Цветя и Градини
 
