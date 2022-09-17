@@ -6,23 +6,23 @@ using Microsoft.Extensions.Logging;
 
 namespace CoinGardenWorld.Store.AzureFunctionApi
 {
-    public class TestFunc
+    public class Hello
     {
         private readonly ILogger _logger;
 
-        public TestFunc(ILoggerFactory loggerFactory)
+        public Hello(ILoggerFactory loggerFactory)
         {
-            _logger = loggerFactory.CreateLogger<TestFunc>();
+            _logger = loggerFactory.CreateLogger<Hello>();
         }
 
-        [Function("TestFunc")]
+        [Function("Hello")]
         public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
 
-            response.WriteAsJsonAsync( "Hello from Azure Functions" );
+            response.WriteAsJsonAsync("Hello from CoinGarden.World NFT API - Azure Functions!");
 
             return response;
         }

@@ -17,7 +17,7 @@ Welcome to your new app.
 
     protected override async Task OnInitializedAsync()
     {
-        Message = await httpClient.GetFromJsonAsync<string>("api/testfunc");
+        Message = await httpClient.GetFromJsonAsync<string>("api/hello");
     }
 
 
