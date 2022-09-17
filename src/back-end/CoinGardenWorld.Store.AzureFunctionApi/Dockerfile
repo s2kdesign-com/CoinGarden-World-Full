@@ -4,19 +4,7 @@ FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated7.0 AS b
 WORKDIR /home/site/wwwroot
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/runtime:6.0 as runtime6.0
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-# Copy .NET Core 6.0 runtime from the 6.0 image
-COPY --from=runtime6.0 /usr/share/dotnet/host /usr/share/dotnet/host
-COPY --from=runtime6.0 /usr/share/dotnet/shared /usr/share/dotnet/shared
-WORKDIR /src
-COPY ["back-end/CoinGardenWorld.Store.AzureFunctionApi/CoinGardenWorld.Store.AzureFunctionApi.csproj", "back-end/CoinGardenWorld.Store.AzureFunctionApi/"]
-RUN dotnet restore "back-end/CoinGardenWorld.Store.AzureFunctionApi/CoinGardenWorld.Store.AzureFunctionApi.csproj"
-COPY . .
-WORKDIR "/src/back-end/CoinGardenWorld.Store.AzureFunctionApi"
-RUN dotnet build "CoinGardenWorld.Store.AzureFunctionApi.csproj" -c Release -o /app/build
-
-FROM build AS publish
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS publish
 RUN dotnet publish "CoinGardenWorld.Store.AzureFunctionApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final

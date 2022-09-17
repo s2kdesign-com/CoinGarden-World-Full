@@ -1,8 +1,13 @@
 {
   "profiles": {
-    "CoinGardenWorld_Store_AzureFunctionApi": {
+    "https": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7117"
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:7182",
+      "commandLineArgs": "--port 7182",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     },
     "Docker": {
       "commandName": "Docker",

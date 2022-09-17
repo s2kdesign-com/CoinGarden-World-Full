@@ -24,6 +24,7 @@ https://docs.coingarden.world/v/bg/
 | Mobile App | Azure Cloud | [https://app.coingarden.world](https://app.coingarden.world) |[![Deploy MobileApps.Pwa Azure](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/azure-static-web-apps-nice-sand-0af6faa03.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/azure-static-web-apps-nice-sand-0af6faa03.yml) |
 | NFT Store | IPFS / Fleek | [https://coingardenworld-store.on.fleek.co](https://coingardenworld-store.on.fleek.co) | [![Deploy  NFT.Store IPFS - Fleek](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-nft-store.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-nft-store.yml) |
 | NFT Store | Azure Cloud | [https://store.coingarden.world](https://store.coingarden.world) | [![Azure Static Web Apps CI/CD](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/azure-static-web-apps-lively-water-04019cd10.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/azure-static-web-apps-lively-water-04019cd10.yml) |
+| NFT Store API | Azure Cloud Function | |  |
 
 ---
 ### 🚢 Docker Images
@@ -33,6 +34,7 @@ https://docs.coingarden.world/v/bg/
 | Landing Page - API/GRPC | 1.0.0 | https://localhost:7167  | [latest](https://github.com/s2kdesign-com/CoinGarden-World-Full/pkgs/container/coingardenworld.landingpage_grpc) | [![Build LandingPage.Grpc Docker](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-landingpage-grpc.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-landingpage-grpc.yml) |
 | Mobile App - PWA | 1.0.0 | https://localhost:7140  | [latest](https://github.com/s2kdesign-com/CoinGarden-World-Full/pkgs/container/coingardenworld.mobileapps_pwa) | [![Build MobileApps.Pwa Docker](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-pwa.yml/badge.svg)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-pwa.yml) |
 | Mobile App - GRPC | 1.0.0 | https://localhost:7142  | [latest](https://github.com/s2kdesign-com/CoinGarden-World-Full/pkgs/container/coingardenworld.mobileapps_grpc) | [![Build MobileApps.Grpc Docker](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-grpc.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/docker-mobile-apps-grpc.yml) |
+| NFT Store - Azure Function | 1.0.0 | http://localhost:7182 | |
 
 ---
 ### 📱 Mobile Applications
