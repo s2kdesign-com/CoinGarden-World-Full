@@ -4,9 +4,6 @@ setTimeout(function(){
     if(preloader){preloader.classList.add('preloader-hide');}
 },150);
 
-document.addEventListener('DOMContentLoaded', () => {
-    'use strict'
-
     //Remove Display none from Page to improve CLS
     // document.querySelectorAll('#page')[0].style.display ='block';
 
@@ -19,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Setting Service Worker Locations scope = folder | location = service worker js location
     var pwaScope = "/";
-    var pwaLocation = "/_service-worker.js";
+    var pwaLocation = "/service-worker.js";
 
     //Place all your custom Javascript functions and plugin calls below this line
     function init_template(){
@@ -82,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		//Activate Selected Menu
 		function activatePage(){
-			var activeMenu = document.querySelectorAll('[data-menu-active]');
-			if(activeMenu){
+            var activeMenu = document.querySelectorAll('[data-menu-active]');
+            if (activeMenu && activeMenu.length > 0 ) {
 				var activeData = activeMenu[0].getAttribute('data-menu-active');
 				var activeID = document.querySelectorAll('#'+activeData)[0]
 				activeID.classList.add('active-item')
@@ -668,7 +665,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					setTimeout(function(){
                         if (dataMenuLoad[dataMenuLoad.length - 1] === e) {
                             // TODO: Not needed with blazor
-							//activatePage();
+							activatePage();
 							darkMode();
 							card_extender();
 							setHighlights();
@@ -680,7 +677,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		} else {
             // TODO: Not needed with blazor
-            //activatePage();
+            activatePage();
 			darkMode();
 			card_extender();
 			setHighlights();
@@ -690,7 +687,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Externally loading Javascript files for better performance.
 
         var plugIdent, plugClass, plugMain, plugCall;
-        var plugLoc = "plugins/"
+        var plugLoc = "_content/CoinGardenWorld.MobileTheme/plugins/"
 
         let plugins = [
           {
@@ -812,21 +809,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
 
     //End of Init Template
-    if(isAJAX === true){
-        if(window.location.protocol !== "file:"){
-            const options = {
-                containers: ["#page"],
-                cache:false,
-                animateHistoryBrowsing: false,
-                plugins: [
-                    new SwupPreloadPlugin()
-                ],
-                linkSelector:'a:not(.external-link):not(.default-link):not([href^="https"]):not([href^="http"]):not([data-gallery])'
-            };
-            const swup = new Swup(options);
-            document.addEventListener('swup:pageView',(e) => { init_template(); })
-        }
-    }
+    //if(isAJAX === true){
+    //    if(window.location.protocol !== "file:"){
+    //        const options = {
+    //            containers: ["#page"],
+    //            cache:false,
+    //            animateHistoryBrowsing: false,
+    //            plugins: [
+    //                new SwupPreloadPlugin()
+    //            ],
+    //            linkSelector:'a:not(.external-link):not(.default-link):not([href^="https"]):not([href^="http"]):not([data-gallery])'
+    //        };
+    //        const swup = new Swup(options);
+    //        document.addEventListener('swup:pageView',(e) => { init_template(); })
+    //    }
+    //}
 
-    init_template();
-});
+    //init_template();

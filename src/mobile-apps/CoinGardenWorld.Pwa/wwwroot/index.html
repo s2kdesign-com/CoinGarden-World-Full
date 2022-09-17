@@ -52,19 +52,19 @@
 
     <script src="_content/Microsoft.Authentication.WebAssembly.Msal/AuthenticationService.js"></script>
     <script src="_framework/blazor.webassembly.js"
-            autostart="false"></script>
+            autostart="true"></script>
     <script>
-        Blazor.start().then(function () {
-            var customScript = document.createElement('script');
-            customScript.setAttribute('src', '_content/CoinGardenWorld.MobileTheme/scripts/custom.js');
-            document.body.appendChild(customScript);
-        });
+        //Blazor.start().then(function () {
+        //    var customScript = document.createElement('script');
+        //    //customScript.setAttribute('src', '_content/CoinGardenWorld.MobileTheme/scripts/custom.js');
+        //    document.body.appendChild(customScript);
+        //});
     </script>
 
 
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <!--<script>navigator.serviceWorker.register('service-worker.js');</script>-->
 
-    <!--<script src="_content/CoinGardenWorld.MobileTheme/scripts/custom.js"></script>-->
+    <script src="_content/CoinGardenWorld.MobileTheme/scripts/custom.js"></script>
 </body>
 
 </html>

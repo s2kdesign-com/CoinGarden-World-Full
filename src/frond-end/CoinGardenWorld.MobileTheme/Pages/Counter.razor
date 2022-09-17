@@ -2,11 +2,22 @@
 
 <PageTitle>Counter</PageTitle>
 
-<h1>Counter</h1>
+<!-- Your Page Content Goes Here-->
+<div class="page-content header-clear-medium">
 
-<p role="status">Current count: @currentCount</p>
+    <div class="card card-style">
+        <div class="content">
+            <!-- End of Page Content-->
+            <h1>Counter</h1>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+            <p role="status">Current count: @currentCount</p>
+
+            <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+        </div>
+
+    </div>
+</div>
 
 @code {
     private int currentCount = 0;

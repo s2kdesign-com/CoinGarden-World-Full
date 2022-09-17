@@ -4,20 +4,33 @@
 
 <PageTitle>Grpc call to the server</PageTitle>
 
-<h1>Weather forecast</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<!-- Your Page Content Goes Here-->
+<div class="page-content header-clear-medium">
 
-@if (model == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <div>
-        @model.Message
+    <div class="card card-style">
+        <div class="content">
+            <h6 class="font-700 mb-n1 color-highlight">Welcome</h6>
+            <h1 class="pb-2">Starter</h1>
+            
+            <p>This component demonstrates fetching data from the server.</p>
+
+            @if (model == null)
+            {
+                <p><em>Loading...</em></p>
+            }
+            else
+            {
+                <div>
+                    @model.Message
+                </div>
+            }
+        </div>
     </div>
-}
+
+</div>
+<!-- End of Page Content-->
+
 
 @code {
     private HelloReply? model;

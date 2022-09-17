@@ -1077,7 +1077,7 @@ input[type=range]::-webkit-slider-thumb {
   transform: scale(0.95) translateY(10px) translateZ(0px);
   filter: blur(12px);
 }
-
+/*
 .bg-1 {
   background-image: url(../images/pictures/1.jpg);
 }
@@ -1164,7 +1164,7 @@ input[type=range]::-webkit-slider-thumb {
 
 .bg-22 {
   background-image: url(../images/pictures/22.jpg);
-}
+}*/
 /*
 .bg-23 {
   background-image: url(../images/pictures/23.jpg);
