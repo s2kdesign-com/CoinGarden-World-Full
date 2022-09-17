@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Главна страница – „CoinGarden.World“ 🏡](README.md)
+* [„Свят на Цветята“ - Начало 🏡](README.md)
 
 ## Архитектура
 
