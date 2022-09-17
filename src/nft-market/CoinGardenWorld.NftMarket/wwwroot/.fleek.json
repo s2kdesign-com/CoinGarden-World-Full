@@ -1,0 +1,15 @@
+{
+  "site": {
+    "id": "2cbbef5d-c379-4d58-be43-e3444c2b9cc3",
+    "team": "30c855ee-7947-4946-98f8-65ffd37866ab",
+    "platform": "ipfs",
+    "source": "ipfs",
+    "name": "coingardenworld-nft"
+  },
+  "build": {
+    "baseDir": "",
+    "publicDir": "",
+    "command": null,
+    "rootDir": ""
+  }
+}

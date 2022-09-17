@@ -3,9 +3,9 @@
 ### 🌷 Web3 Infrastructure for gardening, growing,  🌺
 ### 🌻 selling and earning crypto from your flowers 🌼
 ---
-## 🔗 Official site : https://coingarden.world/
-## 🔗 Mobile Application : https://app.coingarden.world/
-## 🔗 NFT Store : https://store.coingarden.world/
+## 🔗 Official site : https://coingarden.world/ 🌱
+## 🔗 Mobile Application : https://app.coingarden.world/ 🪴
+## 🔗 NFT Store : https://store.coingarden.world/ 🌴
 ---
 > Documentation English:
 https://docs.coingarden.world/  
@@ -22,6 +22,7 @@ https://docs.coingarden.world/v/bg/
 | Landing Page | Github Pages | [https://s2kdesign-com.github.io](https://s2kdesign-com.github.io/CoinGarden-World-Full/) | [![Deploy LandingPage.Web Github Pages](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/gh-pages-landingpage-web.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/gh-pages-landingpage-web.yml) |
 | Mobile App | IPFS / Fleek | [https://coingardenworld-app.on.fleek.co](https://coingardenworld-app.on.fleek.co) | [![Deploy  MobileApps.Pwa IPFS - Fleek](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-mobileapp-pwa.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-mobileapp-pwa.yml) |
 | Mobile App | Azure Cloud | [https://app.coingarden.world](https://app.coingarden.world) |[![Deploy MobileApps.Pwa Azure](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/azure-static-web-apps-nice-sand-0af6faa03.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/azure-static-web-apps-nice-sand-0af6faa03.yml) |
+| NFT Store | IPFS / Fleek | [https://coingardenworld-store.on.fleek.co](https://coingardenworld-store.on.fleek.co) | [![Deploy  NFT.Store IPFS - Fleek](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-nft-store.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/ipfs-fleek-nft-store.yml) |
 | NFT Store | Azure Cloud | [https://store.coingarden.world](https://store.coingarden.world) | [![Azure Static Web Apps CI/CD](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/azure-static-web-apps-lively-water-04019cd10.yml/badge.svg?branch=main)](https://github.com/s2kdesign-com/CoinGarden-World-Full/actions/workflows/azure-static-web-apps-lively-water-04019cd10.yml) |
 
 ---

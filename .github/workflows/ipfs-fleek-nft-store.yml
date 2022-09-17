@@ -1,0 +1,63 @@
+name: Deploy NFT.Store IPFS - Fleek
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+      - 'src/docker-compose*.yml'
+      - 'src/mobile-apps/**'
+      - 'src/landing-page/**'
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Allow one concurrent deployment
+concurrency:
+  group: "fleek-nft-store"
+  cancel-in-progress: true
+
+env:
+  DOTNET_NOLOGO: true                     # Disable the .NET logo
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true # Disable the .NET first time experience
+  DOTNET_CLI_TELEMETRY_OPTOUT: true       # Disable sending .NET CLI telemetry
+ 
+jobs:
+  deploy-to-ipfs-fleek:
+    environment:
+      name: fleek-nft-store
+    # use ubuntu-latest image to run steps on
+    runs-on: ubuntu-latest
+    steps:
+    # uses GitHub's checkout action to checkout code form the master branch
+    - uses: actions/checkout@v2
+    
+    # sets up .NET Core SDK 
+    - name: Setup .NET 7
+      uses: actions/setup-dotnet@c0d4ad69d8bd405d234f1c9166d383b7a4f69ed8
+      with:
+        dotnet-version: 7.0.x
+        include-prerelease: true
+      
+    # publishes Blazor project to the release-folder
+    - name: Publish .NET Core Project
+      run: dotnet publish src/nft-market/CoinGardenWorld.NftMarket/CoinGardenWorld.NftMarket.csproj -c Release -o release --nologo /p:AssemblyVersion=1.0.0.${{ github.run_number }} /p:Version=1.0.0.${{ github.run_number }}
+    
+    # copy index.html to 404.html to serve the same file when a file is not found
+    - name: copy index.html to 404.html
+      run: cp release/wwwroot/index.html release/wwwroot/404.html
+            
+    - name: Fleek Deploy Action
+      id: deploy
+      # You may pin to the exact commit or the version.
+      # uses: FleekHQ/action-deploy@46f7ccc92883cf8e45db5b6a6571a5de5b9ef2be
+      uses: fleekhq/action-deploy@v1
+      with:
+        # Fleek Scoped Api Key
+        apiKey: ${{ secrets.FLEEK_API_KEY }}
+        # Path to directory where fleek site is initialized (optional)
+        workDir: 'release/wwwroot/'
+    - name: Get the output url
+      run: echo "Deploy url is ${{ steps.deploy.outputs.deployUrl }}"
