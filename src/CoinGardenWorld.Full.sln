@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.MobileTheme
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frond-end", "frond-end", "{C69B32EF-091A-4042-8DAF-59FA9B4EFB5D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGardenWorld.Store.AzureFunctionApi", "back-end\CoinGardenWorld.Store.AzureFunctionApi\CoinGardenWorld.Store.AzureFunctionApi.csproj", "{E176EEC8-25AE-47F2-9843-79709BCA86CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{47A818E8-FD6C-4921-A5BE-B42523ECC051}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47A818E8-FD6C-4921-A5BE-B42523ECC051}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47A818E8-FD6C-4921-A5BE-B42523ECC051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E176EEC8-25AE-47F2-9843-79709BCA86CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E176EEC8-25AE-47F2-9843-79709BCA86CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E176EEC8-25AE-47F2-9843-79709BCA86CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E176EEC8-25AE-47F2-9843-79709BCA86CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{099B1FAE-9271-48DB-9502-0554647252A9} = {A3D7C469-57EB-4673-A5F1-2253BB86BB27}
 		{488F837C-3699-4594-8739-20982B02B26D} = {408E76F7-6C4A-4D3D-916A-BF6E1F714D2F}
 		{47A818E8-FD6C-4921-A5BE-B42523ECC051} = {C69B32EF-091A-4042-8DAF-59FA9B4EFB5D}
+		{E176EEC8-25AE-47F2-9843-79709BCA86CF} = {A3D7C469-57EB-4673-A5F1-2253BB86BB27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {890F574E-0420-4F79-8773-9BE66EEDDFAA}
