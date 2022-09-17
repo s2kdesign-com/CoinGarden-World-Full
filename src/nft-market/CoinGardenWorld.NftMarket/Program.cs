@@ -11,4 +11,8 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 #else 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:7182") });
 #endif
+
+// Defined in CoinGardenWorld.NftMarket.Theme
+builder.Services.AddMetaMask();
+
 await builder.Build().RunAsync();

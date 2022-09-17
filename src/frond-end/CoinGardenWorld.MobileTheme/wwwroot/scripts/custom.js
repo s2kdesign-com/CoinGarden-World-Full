@@ -687,7 +687,7 @@ setTimeout(function(){
         // Externally loading Javascript files for better performance.
 
         var plugIdent, plugClass, plugMain, plugCall;
-        var plugLoc = "_content/CoinGardenWorld.MobileTheme/plugins/"
+        var plugLoc = "_content/CoinGardenWorld.Mobile.Theme/plugins/"
 
         let plugins = [
           {

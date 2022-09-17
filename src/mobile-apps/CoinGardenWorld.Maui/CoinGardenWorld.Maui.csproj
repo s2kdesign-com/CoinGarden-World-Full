@@ -50,7 +50,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\frond-end\CoinGardenWorld.MobileTheme\CoinGardenWorld.MobileTheme.csproj" />
+      <ProjectReference Include="..\..\frond-end\CoinGardenWorld.MobileTheme\CoinGardenWorld.Mobile.Theme.csproj" />
     </ItemGroup>
 
 </Project>

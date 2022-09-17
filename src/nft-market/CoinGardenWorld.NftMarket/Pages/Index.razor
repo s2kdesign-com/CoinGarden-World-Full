@@ -1,24 +1,80 @@
 ﻿@page "/"
+@using CoinGardenWorld.NftMarket.Theme
 @inject HttpClient httpClient
+@inject IMetaMaskService metamask
+
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
-
-<span>
+<p>
     @Message
-</span>
+</p>
 
-@code{
+@if (HasMetamask)
+{
+    <p>
+        The browser has MetaMask installed
+    </p>
+}
+else
+{
+    <p>No MetaMask detected. Please install <a href="https://metamask.io" target="_blank">MetaMask</a>.</p>
+}
+
+@if (IsSiteConnected)
+{
+    
+    <!-- DASHBOARD SECTION -->
+    <section class="dashboard-section">
+        <!--
+        <h2 class="wallet-status">Wallet Connected! 🤝</h2>
+        -->
+        <h2 class="moralis-verified">
+            <img alt="Moralis Icon" src="https://moralis.io/wp-content/uploads/2022/05/symbol_for_light_bckg.svg" />
+            <span class="moralis-verified-title">Moralis Verified Address! 🤝</span>
+        </h2>
+        <h3 class="wallet-address-heading">
+            ETH Wallet Address:
+            <span class="wallet-address"></span>
+        </h3>
+        <h3 class="wallet-balance-heading">
+            ETH Balance:
+            <span class="wallet-balance"></span>
+        </h3>
+        <h3 class="moralis-jwt-heading">
+            JWT:
+            <textarea class="moralis-jwt-display"></textarea>
+        </h3>
+        <button class="logout-btn">🔐 Log out</button>
+    </section>
+}
+else
+{
+    
+    <!-- LOGIN SECTION -->
+    <section class="login-section">
+        <button class="login-btn" @onclick=LoginWithMetamask >🔓 Log in with Moralis</button>
+        <span class="instruction">
+            Ensure to have an Ethereum based wallet installed i.e MetaMask
+        </span>
+    </section>
+}
+
+@code {
     private string Message { get; set; }
-
+    private bool HasMetamask;
+    private bool IsSiteConnected;
     protected override async Task OnInitializedAsync()
     {
         Message = await httpClient.GetFromJsonAsync<string>("api/SayHello");
+
+        HasMetamask = await metamask.HasMetaMask();
+        IsSiteConnected = await metamask.IsSiteConnected();
     }
 
-
+    private async Task LoginWithMetamask()
+    {
+        await metamask.ConnectMetaMask();
+        StateHasChanged();
+    }
 }
