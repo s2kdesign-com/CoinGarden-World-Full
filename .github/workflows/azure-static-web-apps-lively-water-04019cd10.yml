@@ -5,6 +5,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+env:
+  DOTNET_VERSION: '7.0.0-preview.7.22375.6'     
 
 jobs:
   build_and_deploy_job:
