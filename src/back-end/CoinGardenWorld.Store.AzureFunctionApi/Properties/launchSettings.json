@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "CoinGardenWorld_Store_AzureFunctionApi": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7117"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30084,
+      "useSSL": false
+    }
+  }
+}
