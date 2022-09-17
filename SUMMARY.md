@@ -5,7 +5,7 @@
 ## Архитектура
 
 * [Какво представлява системата 👨‍🏫](arkhitektura/kakvo-predstavlyava-sistemata.md)
-* [Мобилно приложение – „Свят на Цветята“ („Flower World“) 🤳](arkhitektura/mobilno-prilozhenie-svyat-na-cvetyata-flower-world/README.md)
+* [Мобилно Приложение  🤳](arkhitektura/mobilno-prilozhenie-svyat-na-cvetyata-flower-world/README.md)
   * [1. Снимай цветето](arkhitektura/mobilno-prilozhenie-svyat-na-cvetyata-flower-world/1.-snimai-cveteto.md)
   * [2. Разпознай сорта](arkhitektura/mobilno-prilozhenie-svyat-na-cvetyata-flower-world/2.-razpoznai-sorta.md)
   * [2. Получи QR код на цвете](arkhitektura/mobilno-prilozhenie-svyat-na-cvetyata-flower-world/2.-poluchi-qr-kod-na-cvete.md)
@@ -15,6 +15,8 @@
   * [2. Продай NFT снимка](arkhitektura/nft-magazin-za-cvetya/2.-prodai-nft-snimka.md)
   * [3. Продай реално цвете](arkhitektura/nft-magazin-za-cvetya/3.-prodai-realno-cvete.md)
 * [Дарения и каузи 🤠](arkhitektura/dareniya-i-kauzi.md)
+* [МетаСвят 🌐](arkhitektura/metasvyat.md)
+* [GRDN - Крипто Токен](arkhitektura/grdn-kripto-token.md)
 
 ## Цветя и Градини
 
