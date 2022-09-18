@@ -1,5 +1,8 @@
 ﻿@page "/"
+
 @inject IJSRuntime JSRuntime
+@inject AppState AppState
+@using CoinGardenWorld.Web.Shared
 
 <PageTitle> Home </PageTitle>
 
@@ -487,14 +490,5 @@
     </div>
 </section>
 
-@code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/scripts.js");
-            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/charts.js");
-        }
-        await base.OnAfterRenderAsync(firstRender);
-    }
-};
+<ThemePageLoader />
+<ThemeScriptLoader />

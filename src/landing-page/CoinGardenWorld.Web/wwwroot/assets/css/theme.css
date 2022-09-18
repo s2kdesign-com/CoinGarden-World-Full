@@ -5,3 +5,6 @@ Theme	 :  Default
 * Updated	 :	03/08/2022
 */
 /*! WRITE YOUR CUSTOM STYLE **/
+.bg-theme-grad {
+  background-image: linear-gradient(to right, #6DC219 0%, #C26E19 50%, #6e19c2 100%) !important;
+}

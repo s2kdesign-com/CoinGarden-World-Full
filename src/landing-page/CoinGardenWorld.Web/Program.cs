@@ -11,7 +11,9 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-// Add Grpc client 
+// Add Grpc client
+
+builder.Services.AddSingleton<AppState>();
 
 builder.Services.AddSingleton(services =>
 {

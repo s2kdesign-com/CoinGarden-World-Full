@@ -1,0 +1,14 @@
+﻿@inject AppState AppState
+@inject IJSRuntime JS
+
+@code {
+   protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if(AppState.ThemeModule != null )
+        {
+            await AppState.ThemeModule.InvokeVoidAsync("NioApp.winLoad", JS);
+        }
+
+    }
+
+}

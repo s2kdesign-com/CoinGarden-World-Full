@@ -3,5 +3,23 @@
 <main class="nk-pages">
    @Body
 </main>
+
+<div class="preloader preloader-alt no-split">
+   <span class="spinner spinner-alt">
+      <img class="spinner-brand" src="images/logo-full-white.png" alt="">
+   </span>
+</div>
+
 <Footer />
 <Modal/>
+
+@code {
+    bool afterRender;
+
+    //IJSObjectReference? module;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        afterRender = true;
+
+    }
+}
