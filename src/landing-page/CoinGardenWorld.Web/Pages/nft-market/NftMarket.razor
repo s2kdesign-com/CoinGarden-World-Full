@@ -1,5 +1,7 @@
 @page "/nft-market"
+
 @inject IJSRuntime JSRuntime
+@inject AppState AppState
 
 <PageTitle> NFT Market </PageTitle>
 
@@ -15,8 +17,8 @@
                           <div class="col-xl-6 col-lg-9">
                               <div class="banner-caption cpn tc-light text-center">
                                   <div class="cpn-head">
-                                      <h2 class="title ttu">Coin Garden NFT Marketplace</h2>
-                                      <p>Welcome to Coin Garden NFT Marketplace.The NFT Marketplace provides you with the opportunity to create (or as we call it, mint), sell, purchase, bid on, collect, trade, showcase and otherwise transact digital blockchain collectibles, which may be represented as a non-fungible token (“NFT”) linked with certain digital media and art (“NFT Media”).</p>
+                                      <h2 class="title ttu animated" data-animate="fadeInUp" data-delay="1.1">Coin Garden NFT Marketplace</h2>
+                                      <p class="lead animated" data-animate="fadeInUp" data-delay="1.3">Welcome to Coin Garden NFT Marketplace.The NFT Marketplace provides you with the opportunity to create (or as we call it, mint), sell, purchase, bid on, collect, trade, showcase and otherwise transact digital blockchain collectibles, which may be represented as a non-fungible token (“NFT”) linked with certain digital media and art (“NFT Media”).</p>
                                   </div>
                               </div>
                           </div>
@@ -42,8 +44,8 @@
                 <div class="piller-two">
                     <img src="images/piler-b.png" alt="graphic">
                 </div>
-                <h2 class="title title-thin">We are coming soon</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <h2 class="title title-thin animated" data-animate="fadeInUp" data-delay="1.4">We are coming soon</h2>
+                <p class="animated" data-animate="fadeInUp" data-delay="1.6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 <div class="countdown-s3 countdown-wd countdown-s3-lg countdown-xl countdown-thin countdown mb-5" data-date="2022/06/11" data-min-text="Minutes" data-sec-text="Seconds"></div>
 
             </div>
@@ -51,15 +53,5 @@
     </div>
 </div>
 
-
-@code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/scripts.js");
-            await JSRuntime.InvokeVoidAsync("loadJs", "assets/js/charts.js");
-        }
-        await base.OnAfterRenderAsync(firstRender);
-    }
-};
+<ThemePageLoader />
+<ThemeScriptLoader />

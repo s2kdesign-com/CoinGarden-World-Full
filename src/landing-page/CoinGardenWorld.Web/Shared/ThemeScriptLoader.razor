@@ -1,0 +1,17 @@
+﻿@inject AppState AppState
+@inject IJSRuntime JS
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            AppState.ThemeModule = await JS.InvokeAsync<IJSObjectReference>("import", "/js/scripts.js");
+            await AppState.ThemeModule.InvokeVoidAsync("NioApp.docReady", JS);
+
+            await AppState.ThemeModule.InvokeVoidAsync("NioApp.winLoad", JS);
+        }
+
+    }
+
+}
