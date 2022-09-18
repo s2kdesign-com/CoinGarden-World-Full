@@ -1,8 +1,10 @@
 ﻿@page "/"
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
 
 @inject IJSRuntime JsRuntime
 
-<PageTitle>CGW Charity</PageTitle>
+<PageTitle>@Configuration["SiteTitle"]</PageTitle>
 
 <!--  -->
 <div class="simpleslide100">
@@ -34,7 +36,7 @@
 			</h3>
 
 			<p class="m2-txt1 respon6">
-				CoinGarden.World
+                @Configuration["SiteName"]
 			</p>
 @*
 			<form class="contact100-form validate-form p-t-55 w-full">
