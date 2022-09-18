@@ -1,5 +1,6 @@
 ﻿@page "/"
-@using CoinGardenWorld.NftMarket.Theme
+@using CoinGardenWorld.Moralis.Metamask
+@using System.Numerics
 @inject HttpClient httpClient
 @inject IMetaMaskService metamask
 
@@ -35,11 +36,11 @@ else
         </h2>
         <h3 class="wallet-address-heading">
             ETH Wallet Address:
-            <span class="wallet-address"></span>
+            <span class="wallet-address">@EthAddress</span>
         </h3>
         <h3 class="wallet-balance-heading">
             ETH Balance:
-            <span class="wallet-balance"></span>
+            <span class="wallet-balance">@EthBalance</span>
         </h3>
         <h3 class="moralis-jwt-heading">
             JWT:
@@ -61,15 +62,25 @@ else
 }
 
 @code {
-    private string Message { get; set; }
+    private string Message;
     private bool HasMetamask;
     private bool IsSiteConnected;
+    private string EthAddress;
+    private BigInteger EthBalance;
     protected override async Task OnInitializedAsync()
     {
         Message = await httpClient.GetFromJsonAsync<string>("api/SayHello");
 
         HasMetamask = await metamask.HasMetaMask();
         IsSiteConnected = await metamask.IsSiteConnected();
+        if (HasMetamask)
+        {
+            if (IsSiteConnected)
+            {
+                EthAddress = await metamask.GetSelectedAddress();
+                EthBalance = await metamask.GetBalance(EthAddress);
+            }
+        }
     }
 
     private async Task LoginWithMetamask()

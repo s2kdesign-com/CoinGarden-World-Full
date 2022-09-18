@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\frond-end\CoinGardenWorld.NftMarket.Theme\CoinGardenWorld.NftMarket.Theme.csproj" />
+    <ProjectReference Include="..\..\frond-end\shared\CoinGardenWorld.Moralis.Metamask\CoinGardenWorld.Moralis.Metamask.csproj" />
   </ItemGroup>
 
   <ItemGroup>

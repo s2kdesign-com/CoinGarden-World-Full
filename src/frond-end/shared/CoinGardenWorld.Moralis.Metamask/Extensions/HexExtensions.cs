@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Numerics;
 
-namespace CoinGardenWorld.NftMarket.Theme.Extensions
+namespace CoinGardenWorld.Moralis.Metamask.Extensions
 {
     public static class HexExtensions
     {

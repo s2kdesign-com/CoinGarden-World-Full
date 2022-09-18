@@ -1,8 +1,7 @@
-﻿using CoinGardenWorld.NftMarket.Theme.Extensions;
+﻿using System.Numerics;
 using Microsoft.JSInterop;
-using System.Numerics;
 
-namespace CoinGardenWorld.NftMarket.Theme;
+namespace CoinGardenWorld.Moralis.Metamask;
 
 
 public interface IMetaMaskService
@@ -23,8 +22,6 @@ public interface IMetaMaskService
     ValueTask<IJSObjectReference> LoadScripts(IJSRuntime jsRuntime);
     Task<string> RequestAccounts();
     ValueTask<string> SendTransaction(string to, BigInteger weiValue, string? data = null);
-    ValueTask<string> SignTypedData(string label, string value);
-    ValueTask<string> SignTypedDataV4(string typedData);
 
     [JSInvokable()]
     static async Task OnAccountsChanged(string selectedAccount)

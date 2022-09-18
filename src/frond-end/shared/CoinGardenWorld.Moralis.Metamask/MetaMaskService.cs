@@ -1,11 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.JSInterop;
-using System.Numerics;
+﻿using System.Numerics;
 using System.Text.Json;
-using CoinGardenWorld.NftMarket.Theme.Exceptions;
-using CoinGardenWorld.NftMarket.Theme.Extensions;
+using CoinGardenWorld.Moralis.Metamask.Exceptions;
+using CoinGardenWorld.Moralis.Metamask.Extensions;
+using Microsoft.JSInterop;
 
-namespace CoinGardenWorld.NftMarket.Theme;
+namespace CoinGardenWorld.Moralis.Metamask;
 
 // This class provides JavaScript functionality for MetaMask wrapped
 // in a .NET class for easy consumption. The associated JavaScript module is
@@ -29,7 +28,7 @@ public class MetaMaskService : IAsyncDisposable, IMetaMaskService
     public ValueTask<IJSObjectReference> LoadScripts(IJSRuntime jsRuntime)
     {
         //await jsRuntime.InvokeAsync<IJSObjectReference>("import", "https://cdn.ethers.io/lib/ethers-5.1.0.umd.min.js");
-        return jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/CoinGardenWorld.NftMarket.Theme/metaMaskJsInterop.js");
+        return jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/CoinGardenWorld.Moralis.Metamask/metaMaskJsInterop.js");
     }
 
     public async ValueTask ConnectMetaMask()
@@ -74,7 +73,21 @@ public class MetaMaskService : IAsyncDisposable, IMetaMaskService
         }
     }
 
-    public async ValueTask ListenToEvents()
+    public async ValueTask Logout()
+    {
+	    var module = await moduleTask.Value;
+	    try
+	    {
+		    await module.InvokeVoidAsync("Logout");
+	    }
+	    catch (Exception ex)
+	    {
+		    HandleExceptions(ex);
+		    throw;
+	    }
+    }
+
+	public async ValueTask ListenToEvents()
     {
         var module = await moduleTask.Value;
         try
@@ -87,6 +100,7 @@ public class MetaMaskService : IAsyncDisposable, IMetaMaskService
             throw;
         }
     }
+
 
     public async ValueTask<string> GetSelectedAddress()
     {
@@ -137,35 +151,7 @@ public class MetaMaskService : IAsyncDisposable, IMetaMaskService
             throw;
         }
     }
-
-    public async ValueTask<string> SignTypedData(string label, string value)
-    {
-        var module = await moduleTask.Value;
-        try
-        {
-            return await module.InvokeAsync<string>("signTypedData", label, value);
-        }
-        catch (Exception ex)
-        {
-            HandleExceptions(ex);
-            throw;
-        }
-    }
-
-    public async ValueTask<string> SignTypedDataV4(string typedData)
-    {
-        var module = await moduleTask.Value;
-        try
-        {
-            return await module.InvokeAsync<string>("signTypedDataV4", typedData);
-        }
-        catch (Exception ex)
-        {
-            HandleExceptions(ex);
-            throw;
-        }
-    }
-
+    
     public async ValueTask<string> SendTransaction(string to, BigInteger weiValue, string? data = null)
     {
         var module = await moduleTask.Value;
