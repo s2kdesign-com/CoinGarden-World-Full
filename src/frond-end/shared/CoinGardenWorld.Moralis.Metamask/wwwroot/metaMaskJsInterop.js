@@ -45,6 +45,17 @@ export async function getSelectedAddress() {
     return ethereum.selectedAddress;
 }
 
+// web3 logout function
+export async function logout() {
+    // set the global ethereum.selectedAddress variable to null
+    console.log('Logout: ' + ethereum.selectedAddresss);
+    ethereum.selectedAddresss = null;
+
+    // remove the user's wallet address from local storage
+   // window.localStorage.removeItem("userWalletAddress");
+
+};
+
 export async function listenToChangeEvents() {
     if (hasMetaMask()) {
         //ethereum.on("connect", function () {
@@ -56,11 +67,11 @@ export async function listenToChangeEvents() {
         //});
 
         ethereum.on("accountsChanged", function (accounts) {
-            DotNet.invokeMethodAsync('MetaMask.Blazor', 'OnAccountsChanged', accounts[0]);
+            DotNet.invokeMethodAsync('CoinGardenWorld.Moralis.Metamask', 'OnAccountsChanged', accounts[0]);
         });
 
         ethereum.on("chainChanged", function (chainId) {
-            DotNet.invokeMethodAsync('MetaMask.Blazor', 'OnChainChanged', chainId);
+            DotNet.invokeMethodAsync('CoinGardenWorld.Moralis.Metamask', 'OnChainChanged', chainId);
         });
     }
 }
@@ -87,55 +98,6 @@ export async function getTransactionCount() {
 
     });
     return result;
-}
-
-export async function signTypedData(label, value) {
-    await checkMetaMask();
-
-    const msgParams = [
-        {
-            type: 'string', // Valid solidity type
-            name: label,
-            value: value
-        }
-    ]
-
-    try {
-        var result = await ethereum.request({
-            method: 'eth_signTypedData',
-            params:
-                [
-                    msgParams,
-                    ethereum.selectedAddress
-                ]
-        });
-
-        return result;
-    } catch (error) {
-        // User denied account access...
-        throw "UserDenied"
-    }
-}
-
-export async function signTypedDataV4(typedData) {
-    await checkMetaMask();
-
-    try {
-        var result = await ethereum.request({
-            method: 'eth_signTypedData_v4',
-            params:
-                [
-                    ethereum.selectedAddress,
-                    typedData
-                ],
-            from: ethereum.selectedAddress
-        });
-
-        return result;
-    } catch (error) {
-        // User denied account access...
-        throw "UserDenied"
-    }
 }
 
 export async function sendTransaction(to, value, data) {

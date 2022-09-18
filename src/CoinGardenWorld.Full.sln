@@ -69,11 +69,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exchange", "exchange", "{1B
 		exchange\README.md = exchange\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGardenWorld.Exchange.Web", "exchange\CoinGardenWorld.Exchange.Web\CoinGardenWorld.Exchange.Web.csproj", "{9AF19581-7BF6-4904-A43D-5EAB794EC704}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Exchange.Web", "exchange\CoinGardenWorld.Exchange.Web\CoinGardenWorld.Exchange.Web.csproj", "{9AF19581-7BF6-4904-A43D-5EAB794EC704}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{60646D50-757B-47FF-892E-F42CC8A58E29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinGardenWorld.MoralisShared.AzureFunctions", "back-end\shared\CoinGardenWorld.Moralis.SharedAzureFunctions\CoinGardenWorld.MoralisShared.AzureFunctions.csproj", "{87F2EFBB-92A3-4E9D-B6DC-B444A5998562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.MoralisShared.AzureFunctions", "back-end\shared\CoinGardenWorld.Moralis.SharedAzureFunctions\CoinGardenWorld.MoralisShared.AzureFunctions.csproj", "{87F2EFBB-92A3-4E9D-B6DC-B444A5998562}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{31EE6100-409A-45A1-82C3-5FBDC0D24F22}"
 EndProject

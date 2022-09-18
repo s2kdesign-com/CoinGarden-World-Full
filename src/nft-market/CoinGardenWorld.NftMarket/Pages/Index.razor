@@ -25,67 +25,28 @@ else
 @if (IsSiteConnected)
 {
     
-    <!-- DASHBOARD SECTION -->
-    <section class="dashboard-section">
-        <!--
-        <h2 class="wallet-status">Wallet Connected! 🤝</h2>
-        -->
-        <h2 class="moralis-verified">
-            <img alt="Moralis Icon" src="https://moralis.io/wp-content/uploads/2022/05/symbol_for_light_bckg.svg" />
-            <span class="moralis-verified-title">Moralis Verified Address! 🤝</span>
-        </h2>
-        <h3 class="wallet-address-heading">
-            ETH Wallet Address:
-            <span class="wallet-address">@EthAddress</span>
-        </h3>
-        <h3 class="wallet-balance-heading">
-            ETH Balance:
-            <span class="wallet-balance">@EthBalance</span>
-        </h3>
-        <h3 class="moralis-jwt-heading">
-            JWT:
-            <textarea class="moralis-jwt-display"></textarea>
-        </h3>
-        <button class="logout-btn">🔐 Log out</button>
-    </section>
-}
-else
-{
+    <h2 class="moralis-verified">
+        <img alt="Moralis Icon" src="https://moralis.io/wp-content/uploads/2022/05/symbol_for_light_bckg.svg" />
+        <span class="moralis-verified-title">Moralis Verified Address! 🤝</span>
+    </h2>
     
-    <!-- LOGIN SECTION -->
-    <section class="login-section">
-        <button class="login-btn" @onclick=LoginWithMetamask >🔓 Log in with Moralis</button>
-        <span class="instruction">
-            Ensure to have an Ethereum based wallet installed i.e MetaMask
-        </span>
-    </section>
+   @* <h3 class="moralis-jwt-heading">
+        JWT:
+        <textarea class="moralis-jwt-display"></textarea>
+    </h3>*@
 }
 
 @code {
     private string Message;
     private bool HasMetamask;
     private bool IsSiteConnected;
-    private string EthAddress;
-    private BigInteger EthBalance;
+
     protected override async Task OnInitializedAsync()
     {
         Message = await httpClient.GetFromJsonAsync<string>("api/SayHello");
 
         HasMetamask = await metamask.HasMetaMask();
         IsSiteConnected = await metamask.IsSiteConnected();
-        if (HasMetamask)
-        {
-            if (IsSiteConnected)
-            {
-                EthAddress = await metamask.GetSelectedAddress();
-                EthBalance = await metamask.GetBalance(EthAddress);
-            }
-        }
     }
 
-    private async Task LoginWithMetamask()
-    {
-        await metamask.ConnectMetaMask();
-        StateHasChanged();
-    }
 }

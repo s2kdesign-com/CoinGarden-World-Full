@@ -78,7 +78,7 @@ public class MetaMaskService : IAsyncDisposable, IMetaMaskService
 	    var module = await moduleTask.Value;
 	    try
 	    {
-		    await module.InvokeVoidAsync("Logout");
+		    await module.InvokeVoidAsync("logout");
 	    }
 	    catch (Exception ex)
 	    {

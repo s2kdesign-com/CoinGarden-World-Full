@@ -19,6 +19,7 @@ public interface IMetaMaskService
     ValueTask<bool> HasMetaMask();
     ValueTask<bool> IsSiteConnected();
     ValueTask ListenToEvents();
+    ValueTask Logout();
     ValueTask<IJSObjectReference> LoadScripts(IJSRuntime jsRuntime);
     Task<string> RequestAccounts();
     ValueTask<string> SendTransaction(string to, BigInteger weiValue, string? data = null);
