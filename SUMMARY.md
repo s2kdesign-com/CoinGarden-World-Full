@@ -37,3 +37,8 @@
 * [Значки за принос 🥇](potrebiteli/znachki-za-prinos/README.md)
   * [Природни значки 🪴](potrebiteli/znachki-za-prinos/prirodni-znachki.md)
   * [Социални значки 🧑‍🌾](potrebiteli/znachki-za-prinos/socialni-znachki.md)
+
+## Разработка
+
+* [Инфраструктура 🏙️](razrabotka/infrastruktura.md)
+* [Използвани технологии 👩‍🔧](razrabotka/izpolzvani-tekhnologii.md)

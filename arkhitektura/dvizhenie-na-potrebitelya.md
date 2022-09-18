@@ -1,3 +1,3 @@
 # Движение на потребителя 🧑‍🌾
 
-<figure><img src="../.gitbook/assets/UserFlowDiagram.drawio.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/UserFlowDiagram.drawio (1).png" alt=""><figcaption></figcaption></figure>
