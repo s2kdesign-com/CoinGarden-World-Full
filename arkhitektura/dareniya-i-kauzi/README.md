@@ -1,10 +1,13 @@
 # Дарения и каузи 🤠
 
-* Home
-  * Dashboard with all shared pictures from charity projects added by users Pictures will be like burn Forests and dry lakes and so on :( ...
-* My Charitys
-  * Every user can create a charity and add pictures to that charity. Every picture will be shared to the main dashboard and users can bid on buying the picture as NFT ànd have the rights to publish them on magazines ALL of the funds will be used to save the land represended in the charity
-* My Part of Saving the Planet
-  * Shows statistics for how much this user is saving the earth. Every user will receive 33% ot splited weekly accumulated LP tokens as reward for saving the planet
-* Others part of Saving the Planet
-  * When charity is finished the money will be redrawn on parts by 33% and every other user can Vote if the user should receive the next part part by looking the pictures. If the user is not doing anything for the charity for 60 days , other user can reclaim the charity and get all the rewards and fame
+#### Групово финансиране
+
+#### Системата за дарения в "Свят на цветята" представлява уникален начин с който потребителите , заедно , могат да спасят застрашени места или да изчистят замърсена гора от отпадъци.
+
+Всеки потребител на системата може да направи снимка на такова място и да кандидатства за финансиране. Дори да няма нужда от средства , потребителя ще получи значки за принос и опазване на околната среда от типа на НФТ-и за всяко място което е спасил.
+
+#### Как работи
+
+Системата работи по следния начин: потребител заснема застрашено място или гора, пуска своите снимки с точна локация на мястото, избира период за дарения, период за изпълнение и нужни средства и започва да събира дарения. След приключване на първия период, сумата започва да се отпуска към портфейла му на 10% стъпки, като след всяка стъпка трябва да качи снимка спасеното място.&#x20;
+
+####

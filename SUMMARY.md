@@ -19,6 +19,9 @@
   * [2. Как да дариш](arkhitektura/dareniya-i-kauzi/2.-kak-da-darish.md)
 * [МетаСвят 🌐](arkhitektura/metasvyat/README.md)
   * [1. Започни игра](arkhitektura/metasvyat/1.-zapochni-igra.md)
+  * [2. Вдигни нивото си](arkhitektura/metasvyat/2.-vdigni-nivoto-si.md)
+  * [3. Печели крипто валута](arkhitektura/metasvyat/3.-pecheli-kripto-valuta.md)
+  * [4. Украси острова си](arkhitektura/metasvyat/4.-ukrasi-ostrova-si.md)
 * [GRDN - Крипто Токен](arkhitektura/grdn-kripto-token/README.md)
   * [1. Токеномика](arkhitektura/grdn-kripto-token/1.-tokenomika.md)
 
