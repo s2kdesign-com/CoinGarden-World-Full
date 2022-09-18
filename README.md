@@ -13,6 +13,11 @@ https://docs.coingarden.world/
 https://docs.coingarden.world/v/bg/
 
 ---
+
+### 🧑‍🌾 User Flow
+![infrastructure](https://github.com/s2kdesign-com/CoinGarden-World-Full/blob/main/docs/assets/UserFlowDiagram.drawio.png?raw=true)
+
+---
 ### 🚀  Site Deployments
 ### Azure cloud 🚀
 | Application | Cloud | Url | Status |
