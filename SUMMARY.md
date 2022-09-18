@@ -5,6 +5,7 @@
 ## Архитектура
 
 * [Какво представлява системата 👨‍🏫](arkhitektura/kakvo-predstavlyava-sistemata.md)
+* [Движение на потребителя 🧑‍🌾](arkhitektura/dvizhenie-na-potrebitelya.md)
 * [Мобилно Приложение  🤳](arkhitektura/mobilno-prilozhenie-svyat-na-cvetyata-flower-world/README.md)
   * [1. Снимай цветето](arkhitektura/mobilno-prilozhenie-svyat-na-cvetyata-flower-world/1.-snimai-cveteto.md)
   * [2. Разпознай сорта](arkhitektura/mobilno-prilozhenie-svyat-na-cvetyata-flower-world/2.-razpoznai-sorta.md)
@@ -22,7 +23,7 @@
   * [2. Вдигни нивото си](arkhitektura/metasvyat/2.-vdigni-nivoto-si.md)
   * [3. Печели крипто валута](arkhitektura/metasvyat/3.-pecheli-kripto-valuta.md)
   * [4. Украси острова си](arkhitektura/metasvyat/4.-ukrasi-ostrova-si.md)
-* [GRDN - Крипто Токен](arkhitektura/grdn-kripto-token/README.md)
+* [GRDN - Крипто Токен 🪙](arkhitektura/grdn-kripto-token/README.md)
   * [1. Токеномика](arkhitektura/grdn-kripto-token/1.-tokenomika.md)
 
 ## Цветя и Градини
