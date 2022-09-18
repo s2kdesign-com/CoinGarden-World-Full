@@ -1,0 +1,109 @@
+﻿@page "/"
+
+@inject IJSRuntime JsRuntime
+
+<PageTitle>CGW Charity</PageTitle>
+
+<!--  -->
+<div class="simpleslide100">
+	<div class="simpleslide100-item bg-img1" style="background-image: url('./_content/CoinGardenWorld.Maintenance.Theme/images/bg01.jpg');"></div>
+	<div class="simpleslide100-item bg-img1" style="background-image: url('./_content/CoinGardenWorld.Maintenance.Theme/images/bg02.jpg');"></div>
+	<div class="simpleslide100-item bg-img1" style="background-image: url('./_content/CoinGardenWorld.Maintenance.Theme/images/bg03.jpg');"></div>
+</div>
+
+<div class="size1 overlay1">
+	<!--  -->
+	<div class="w-full flex-w flex-sb-m p-l-65 p-r-80 p-t-22 p-b-185 p-lr-15-sm respon8">
+		<div class="wrappic1 m-r-30 m-t-10 m-b-10">
+			<a href="#"><img src="./_content/CoinGardenWorld.Maintenance.Theme/images/icons/logo.png" alt="LOGO"></a>
+		</div>
+
+		@*<div class="flex-w m-t-10 m-b-10">
+			<a href="#" class="size2 m1-txt1 flex-c-m how-btn1 trans-04">
+				Sign Up
+			</a>
+		</div>*@
+	</div>
+
+	<!--  -->
+	<div class="flex-sb flex-row-rev where3-parent p-l-58 p-r-46 respon2">
+		<!--  -->
+		<div class="where3 wsize2 respon1">
+			<h3 class="l1-txt2 p-b-30 respon6 respon7">
+				Coming Soon
+			</h3>
+
+			<p class="m2-txt1 respon6">
+				CoinGarden.World
+			</p>
+@*
+			<form class="contact100-form validate-form p-t-55 w-full">
+				<div class="wrap-input100 validate-input m-lr-auto-lg" data-validate="Email is required: ex@abc.xyz">
+					<input class="s2-txt1 placeholder0 input100 trans-04" type="text" name="email" placeholder="Email Address">
+
+					<button class="flex-c-m ab-t-r size4 s1-txt1 hov1 trans-04">
+						<i class="fa fa-paper-plane fs-15 cl0"></i>
+					</button>
+				</div>
+			</form>*@
+		</div>
+
+		<!--  -->
+		@*<div class="flex-w flex-col cd100 p-t-34 respon3">
+			<div class="flex-col wsize1 m-b-40 respon4">
+				<span class="l1-txt1 p-b-30 days">35</span>
+				<span class="s1-txt1">Days</span>
+			</div>
+
+			<div class="flex-col wsize1 m-b-40 respon4">
+				<span class="l1-txt1 p-b-30 hours">17</span>
+				<span class="s1-txt1">Hours</span>
+			</div>
+
+			<div class="flex-col wsize1 m-b-40 respon4">
+				<span class="l1-txt1 p-b-30 minutes">50</span>
+				<span class="s1-txt1">Minutes</span>
+			</div>
+
+			<div class="flex-col wsize1 m-b-40 respon4">
+				<span class="l1-txt1 p-b-30 seconds">39</span>
+				<span class="s1-txt1">Seconds</span>
+			</div>
+		</div>*@
+
+		<!--  -->
+		<div class="flex-w flex-col where2 respon5">
+			<a href="#" class="size3 flex-c-m how-social trans-04 m-r-3 m-l-3 m-b-5">
+				<i class="fa fa-facebook-official"></i>
+			</a>
+
+			<a href="#" class="size3 flex-c-m how-social trans-04 m-r-3 m-l-3 m-b-5">
+				<i class="fa fa-twitter-square"></i>
+			</a>
+
+			<a href="#" class="size3 flex-c-m how-social trans-04 m-r-3 m-l-3 m-b-5">
+				<i class="fa fa-pinterest-square"></i>
+			</a>
+		</div>
+
+	</div>
+
+
+</div>
+
+@code {
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+
+			await JsRuntime.InvokeAsync<IJSInProcessObjectReference>("import", "./_content/CoinGardenWorld.Maintenance.Theme/vendor/jquery/jquery-3.2.1.min.js");
+			await JsRuntime.InvokeAsync<IJSInProcessObjectReference>("import", "./_content/CoinGardenWorld.Maintenance.Theme/js/main.js");
+
+
+		}
+	}
+
+
+}
