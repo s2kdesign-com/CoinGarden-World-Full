@@ -13,17 +13,17 @@
  ┃ ┗ 🖼️ Front-end themes (Blazor .NET)
  ┣ 📂smart-contracts
  ┃ ┣ 📂nft-contracts
- ┃ ┃ ┗ 📜Flower.sol (Solidity)
+ ┃ ┃ ┗ 📜 Flower.sol (Solidity)
  ┃ ┣ 📂exchange
- ┃ ┃ ┗ 📜GRDNToken.sol (Solidity)
+ ┃ ┃ ┗ 📜 GRDNToken.sol (Solidity)
  ┣ 📂landing-page
  ┃ ┗ 🔗 Official Site (Blazor WebAssembly, PWA)
  ┣ 📂nft-market
- ┃ ┗ 🔗 NFT Store Web3 DApp (Blazor WebAssembly, PWA)
+ ┃ ┗ ⛓️ NFT Store Web3 DApp (Blazor WebAssembly, PWA)
  ┣ 📂charity-page
- ┃ ┗ 🔗 Charity Web3 DApp (Blazor WebAssembly, PWA)
+ ┃ ┗ ⛓️ Charity Web3 DApp (Blazor WebAssembly, PWA)
  ┣ 📂exchange
- ┃ ┗ 🔗 Exchange Web3 DApp (Blazor WebAssembly, PWA)
+ ┃ ┗ ⛓️ Exchange Web3 DApp (Blazor WebAssembly, PWA)
  ┣ 📂metaverse
  ┃ ┣ 🔗 Metaverse Site (Blazor WebAssembly, PWA)
  ┃ ┗ 🌐 Metaverse (Unity C#)
