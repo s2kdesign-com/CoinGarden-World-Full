@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\frond-end\shared\CoinGardenWorld.Moralis.Metamask\CoinGardenWorld.Moralis.Metamask.csproj" />
+    <ProjectReference Include="..\..\front-end\shared\CoinGardenWorld.Moralis.Metamask\CoinGardenWorld.Moralis.Metamask.csproj" />
   </ItemGroup>
 
   <ItemGroup>

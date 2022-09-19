@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\frond-end\CoinGardenWorld.Maintenance.Theme\CoinGardenWorld.Maintenance.Theme.csproj" />
+    <ProjectReference Include="..\..\front-end\CoinGardenWorld.Maintenance.Theme\CoinGardenWorld.Maintenance.Theme.csproj" />
   </ItemGroup>
 
   <ItemGroup>

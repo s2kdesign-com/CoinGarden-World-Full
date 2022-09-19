@@ -37,16 +37,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.MobileApps.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Pwa", "mobile-apps\CoinGardenWorld.Pwa\CoinGardenWorld.Pwa.csproj", "{488F837C-3699-4594-8739-20982B02B26D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Mobile.Theme", "frond-end\CoinGardenWorld.MobileTheme\CoinGardenWorld.Mobile.Theme.csproj", "{47A818E8-FD6C-4921-A5BE-B42523ECC051}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Mobile.Theme", "front-end\CoinGardenWorld.MobileTheme\CoinGardenWorld.Mobile.Theme.csproj", "{47A818E8-FD6C-4921-A5BE-B42523ECC051}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frond-end", "frond-end", "{C69B32EF-091A-4042-8DAF-59FA9B4EFB5D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "front-end", "front-end", "{C69B32EF-091A-4042-8DAF-59FA9B4EFB5D}"
 	ProjectSection(SolutionItems) = preProject
-		frond-end\README.md = frond-end\README.md
+		front-end\README.md = front-end\README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Store.AzureFunctionApi", "back-end\CoinGardenWorld.Store.AzureFunctionApi\CoinGardenWorld.Store.AzureFunctionApi.csproj", "{E176EEC8-25AE-47F2-9843-79709BCA86CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Moralis.Metamask", "frond-end\shared\CoinGardenWorld.Moralis.Metamask\CoinGardenWorld.Moralis.Metamask.csproj", "{12CED5EA-C861-415F-9CA5-9DD0948040AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Moralis.Metamask", "front-end\shared\CoinGardenWorld.Moralis.Metamask\CoinGardenWorld.Moralis.Metamask.csproj", "{12CED5EA-C861-415F-9CA5-9DD0948040AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "charity-page", "charity-page", "{D394F686-F6B9-4766-A3EB-2EB5A22C212E}"
 	ProjectSection(SolutionItems) = preProject
@@ -60,7 +60,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "metaverse", "metaverse", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Charity.Web", "charity-page\CoinGardenWorld.Charity.Web\CoinGardenWorld.Charity.Web.csproj", "{F718F423-DB19-4084-ADBD-40921C48A093}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Maintenance.Theme", "frond-end\CoinGardenWorld.Maintenance.Theme\CoinGardenWorld.Maintenance.Theme.csproj", "{5338D3A2-133A-44D4-95FC-A2688F3E5225}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Maintenance.Theme", "front-end\CoinGardenWorld.Maintenance.Theme\CoinGardenWorld.Maintenance.Theme.csproj", "{5338D3A2-133A-44D4-95FC-A2688F3E5225}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGardenWorld.Metaverse.Web", "metaverse\CoinGardenWorld.Metaverse.Web\CoinGardenWorld.Metaverse.Web.csproj", "{76721AAA-A67E-4E6E-9B9F-920125FB2E4D}"
 EndProject
