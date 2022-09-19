@@ -1,8 +1,8 @@
-<header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
-    <!-- Header @s -->
-    <MainMenu />
-    <!-- Banner @s -->
-    <div class="header-banner bg-theme-grad">
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JS
+
+<!-- Banner @s -->
+<div class="header-banner bg-theme-grad">
         <div class="nk-banner">
             <div class="banner banner-fs banner-pd-lg">
                 <div class="banner-wrap">
@@ -43,4 +43,15 @@
         <div id="particles-bg" class="particles-container particles-bg"></div>
     </div>
     <!-- .header-banner @e -->
-</header>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+            await JS.InvokeVoidAsync("SetParticles", JS);
+
+        }
+    }
+}
