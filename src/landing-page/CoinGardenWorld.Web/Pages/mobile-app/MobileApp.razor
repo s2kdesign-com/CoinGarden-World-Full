@@ -2,37 +2,11 @@
 
 @inject IJSRuntime JSRuntime
 @inject AppState AppState
+@layout MainLayout
 
 <PageTitle> Mobile App </PageTitle>
 
-<header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
-  <MainMenu />
-  <!-- Banner @s -->
-  <div class="header-banner bg-theme-grad">
-      <div class="nk-banner">
-          <div class="banner banner-page">
-              <div class="banner-wrap">
-                  <div class="container">
-                      <div class="row justify-content-center">
-                          <div class="col-xl-6 col-lg-9">
-                              <div class="banner-caption cpn tc-light text-center">
-                                  <div class="cpn-head">
-                                      <h2 class="title ttu animated" data-animate="fadeInUp" data-delay="1.1">Mobile App</h2>
-                                      <p class="lead animated" data-animate="fadeInUp" data-delay="1.4">A mobile application or app is a computer program or software application designed to run on a mobile device such as a phone, tablet, or watch. Mobile applications often stand in contrast to desktop applications which are designed to run on desktop computers, and web applications which run in mobile web browsers rather than directly on the mobile device.</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div><!-- .nk-banner -->
-      <div class="nk-ovm mask-f mask-contain-bottom shape-a2"></div>
-      <!-- Place Particle Js -->
-      <div id="particles-bg" class="particles-container particles-bg"></div>
-  </div>
-  <!-- .header-banner @e -->
-</header>
+<PagesBannerContainer Title="Mobile App" Description="A mobile application or app is a computer program or software application designed to run on a mobile device such as a phone, tablet, or watch. Mobile applications often stand in contrast to desktop applications which are designed to run on desktop computers, and web applications which run in mobile web browsers rather than directly on the mobile device." />
 
 <section class="section ov-h animated" data-animate="fadeInUp" data-delay="1.4">
     <!-- Block @s -->
@@ -117,4 +91,3 @@
 </div>
 
 <ThemePageLoader />
-<ThemeScriptLoader />

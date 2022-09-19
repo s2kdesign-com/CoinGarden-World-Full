@@ -1,12 +1,13 @@
 ﻿@page "/"
 
-@inject IJSRuntime JSRuntime
 @inject AppState AppState
+@layout MainLayout
+@inject IJSRuntime JSRuntime
 @using CoinGardenWorld.Web.Shared
 
 <PageTitle> Home </PageTitle>
 
-<Header />
+<HomeBanner />
 
 <section class="section bg-transparent over-up over-up-xl-s2 pdt-0">
     <div class="ui-mask-right ui-mask-s8"></div>
@@ -491,4 +492,3 @@
 </section>
 
 <ThemePageLoader />
-<ThemeScriptLoader />

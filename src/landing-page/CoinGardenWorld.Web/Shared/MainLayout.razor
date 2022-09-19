@@ -1,7 +1,14 @@
 ﻿@inherits LayoutComponentBase
+@inject AppState AppState
+@inject IJSRuntime JS
+
+<header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
+    <MainMenu @ref=mainMenu />
+    @BannerContent
+</header>
 
 <main class="nk-pages">
-   @Body
+    @Body
 </main>
 
 <div class="preloader preloader-alt no-split">
@@ -13,10 +20,15 @@
 <Footer />
 <Modal/>
 
+<ThemeScriptLoader />
 @code {
+    MainMenu? mainMenu;
+
+    [Parameter]
+    public RenderFragment? BannerContent { get; set; }
+
     bool afterRender;
 
-    //IJSObjectReference? module;
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         afterRender = true;
