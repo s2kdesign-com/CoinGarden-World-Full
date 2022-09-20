@@ -11,11 +11,29 @@
     <!-- Site Title  -->
     <title>Coin garden World</title>
     <base href="/" />
-   <!-- Bundle and Base CSS -->
-   <link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=200">
-   <link rel="stylesheet" href="assets/css/style-lobelia.css?ver=200">
-   <!-- Extra CSS -->
-   <link rel="stylesheet" href="assets/css/theme.css?ver=200">
+    <!-- Bundle and Base CSS -->
+    <link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=200">
+    <link rel="stylesheet" href="assets/css/style-lobelia.css?ver=200">
+    <!-- Extra CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css?ver=200">
+
+
+    <script>
+        // set base href dynamically based on hosting location
+        var base = document.createElement('base');
+        var newBase = `${window.location.pathname}`;
+
+        var secondSlash = newBase.indexOf("/", 1);
+        newBase = newBase.substr(0, secondSlash);
+
+        // Ensure initial slash present
+        newBase = (newBase.startsWith("/") ? "" : "/") + newBase;
+        // Ensure trailing slash present
+        newBase += (newBase.endsWith("/") ? "" : "/");
+        base.href = newBase;
+        console.log(`Base href set to ${newBase}`);
+        document.getElementsByTagName('head')[0].appendChild(base);
+    </script>
 </head>
 
 <body class="nk-body body-wider mode-onepage bg-light">
