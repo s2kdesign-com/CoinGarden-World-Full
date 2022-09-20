@@ -16,27 +16,29 @@
     <p>
         The browser has MetaMask installed
     </p>
+    if (!string.IsNullOrEmpty(Address))
+    {
+        <p>@Address</p>
+        
+        <h2 class="moralis-verified">
+            <img alt="Moralis Icon" src="https://moralis.io/wp-content/uploads/2022/05/symbol_for_light_bckg.svg" />
+            <span class="moralis-verified-title">Moralis Verified Address! 🤝</span>
+        </h2>
+
+    @* <h3 class="moralis-jwt-heading">
+        JWT:
+        <textarea class="moralis-jwt-display"></textarea>
+    </h3>*@
+    }
 }
 else
 {
     <p>No MetaMask detected. Please install <a href="https://metamask.io" target="_blank">MetaMask</a>.</p>
 }
 
-@if (IsSiteConnected)
-{
-    
-    <h2 class="moralis-verified">
-        <img alt="Moralis Icon" src="https://moralis.io/wp-content/uploads/2022/05/symbol_for_light_bckg.svg" />
-        <span class="moralis-verified-title">Moralis Verified Address! 🤝</span>
-    </h2>
-    
-   @* <h3 class="moralis-jwt-heading">
-        JWT:
-        <textarea class="moralis-jwt-display"></textarea>
-    </h3>*@
-}
 
 @code {
+    private string Address;
     private string Message;
     private bool HasMetamask;
     private bool IsSiteConnected;
@@ -45,8 +47,19 @@ else
     {
         Message = await httpClient.GetFromJsonAsync<string>("api/SayHello");
 
+
+        IMetaMaskService.AccountChangedEvent += MetaMaskService_AccountChangedEvent;
+
         HasMetamask = await metamask.HasMetaMask();
-        IsSiteConnected = await metamask.IsSiteConnected();
+        if (HasMetamask)
+            Address = await metamask.GetSelectedAddress();
     }
+
+    private async Task MetaMaskService_AccountChangedEvent(string arg)
+    {
+        Address = arg;
+        StateHasChanged();
+    }
+
 
 }

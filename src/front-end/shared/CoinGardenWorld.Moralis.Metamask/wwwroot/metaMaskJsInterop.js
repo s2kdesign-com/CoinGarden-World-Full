@@ -6,11 +6,13 @@ export async function checkMetaMask() {
     if (window.ethereum) {
         if (ethereum.selectedAddress === null || ethereum.selectedAddress === undefined) {
             try {
+                // TODO: do not request account login again , the user can press the button for login
                 // Request account access if needed
                 await requestAccounts();
             } catch (error) {
                 // User denied account access...
-                throw "UserDenied"
+                console.log("UserDenied");
+                //throw "UserDenied"
             }
         }
         else {
@@ -48,7 +50,6 @@ export async function getSelectedAddress() {
 // web3 logout function
 export async function logout() {
     // set the global ethereum.selectedAddress variable to null
-    console.log('Logout: ' + ethereum.selectedAddresss);
     ethereum.selectedAddresss = null;
 
     // remove the user's wallet address from local storage

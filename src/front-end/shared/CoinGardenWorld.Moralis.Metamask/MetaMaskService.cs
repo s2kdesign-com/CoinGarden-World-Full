@@ -115,21 +115,21 @@ public class MetaMaskService : IAsyncDisposable, IMetaMaskService
             throw;
         }
     }
-    // Requires Nethereum.RPC.Eth.Transactions; 
-    //public async ValueTask<(long chainId, Chain chain)> GetSelectedChain()
-    //{
-    //    var module = await moduleTask.Value;
-    //    try
-    //    {
-    //        string chainHex = await module.InvokeAsync<string>("getSelectedChain", null);
-    //        return IMetaMaskService.ChainHexToChainResponse(chainHex);
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        HandleExceptions(ex);
-    //        throw;
-    //    }
-    //}
+
+    public async ValueTask<long> GetSelectedChain()
+    {
+        var module = await moduleTask.Value;
+        try
+        {
+            string chainHex = await module.InvokeAsync<string>("getSelectedChain", null);
+            return IMetaMaskService.ChainHexToChainResponse(chainHex);
+        }
+        catch (Exception ex)
+        {
+            HandleExceptions(ex);
+            throw;
+        }
+    }
 
     public async ValueTask<long> GetTransactionCount()
     {

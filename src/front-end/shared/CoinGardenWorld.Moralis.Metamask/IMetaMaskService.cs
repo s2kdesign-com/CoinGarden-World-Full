@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using CoinGardenWorld.Moralis.Metamask.Extensions;
 using Microsoft.JSInterop;
 
 namespace CoinGardenWorld.Moralis.Metamask;
@@ -7,14 +8,14 @@ namespace CoinGardenWorld.Moralis.Metamask;
 public interface IMetaMaskService
 {
     public static event Func<string, Task>? AccountChangedEvent;
-    //public static event Func<(long, Chain), Task>? ChainChangedEvent;
+    public static event Func<long,  Task>? ChainChangedEvent;
 
     ValueTask ConnectMetaMask();
     ValueTask DisposeAsync();
     ValueTask<dynamic> GenericRpc(string method, params dynamic[]? args);
     Task<BigInteger> GetBalance(string address, string block = "latest");
     ValueTask<string> GetSelectedAddress();
-    //ValueTask<(long chainId, Chain chain)> GetSelectedChain();
+    ValueTask<long> GetSelectedChain();
     ValueTask<long> GetTransactionCount();
     ValueTask<bool> HasMetaMask();
     ValueTask<bool> IsSiteConnected();
@@ -33,18 +34,18 @@ public interface IMetaMaskService
         }
     }
 
-    //[JSInvokable()]
-    //static async Task OnChainChanged(string chainhex)
-    //{
-    //    if (ChainChangedEvent != null)
-    //    {
-    //        await ChainChangedEvent.Invoke(ChainHexToChainResponse(chainhex));
-    //    }
-    //}
+    [JSInvokable()]
+    static async Task OnChainChanged(string chainhex)
+    {
+        if (ChainChangedEvent != null)
+        {
+            await ChainChangedEvent.Invoke(ChainHexToChainResponse(chainhex));
+        }
+    }
 
-    //protected static (long chainId, Chain chain) ChainHexToChainResponse(string chainHex)
-    //{
-    //    long chainId = chainHex.HexToInt();
-    //    return (chainId, (Chain)chainId);
-    //}
+    protected static long ChainHexToChainResponse(string chainHex)
+    {
+        long chainId = chainHex.HexToInt();
+        return chainId;
+    }
 }

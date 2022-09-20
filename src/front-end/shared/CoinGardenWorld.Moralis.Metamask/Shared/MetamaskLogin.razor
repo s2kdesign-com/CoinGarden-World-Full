@@ -1,17 +1,14 @@
 ﻿@using System.Numerics
+@using Microsoft.Extensions.Logging
+@using Microsoft.JSInterop
 
-@inject IMetaMaskService metamask
-
-
-@if (HasMetamask)
+@if (HasMetaMask)
 {
-    if (IsSiteConnected)
+    if (!string.IsNullOrEmpty(EthAddress))
     {
         <span>
-            @EthAddressShort
-        </span>
-        <span>
-            @EthBalance
+            @EthAddressShort - 
+            Balance: @EthBalance
         </span>
 
         @* Logout is only clearing the local cache , the user can just lock his metamask
@@ -32,36 +29,7 @@ else
 
 
 @code {
-    private string Message;
-    private bool HasMetamask;
-    private bool IsSiteConnected;
-    private string EthAddress;
-    private string EthAddressShort;
-    private BigInteger EthBalance;
-    protected override async Task OnInitializedAsync()
-    {
 
-        HasMetamask = await metamask.HasMetaMask();
-        IsSiteConnected = await metamask.IsSiteConnected();
-        if (HasMetamask)
-        {
-            if (IsSiteConnected)
-            {
-                EthAddress = await metamask.GetSelectedAddress();
-                EthAddressShort = EthAddress.Substring(0, 6) + "..." + EthAddress.Substring(EthAddress.Length - 4, 4);
-                EthBalance = await metamask.GetBalance(EthAddress);
-            }
-        }
-    }
 
-    private async Task LoginWithMetamask()
-    {
-        await metamask.ConnectMetaMask();
-        StateHasChanged();
-    }
-    private async Task LogoutMetamask()
-    {
-        await metamask.Logout();
-        StateHasChanged();
-    }
+    
 }
