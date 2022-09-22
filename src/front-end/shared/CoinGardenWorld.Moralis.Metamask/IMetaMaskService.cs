@@ -14,6 +14,9 @@ public interface IMetaMaskService
     ValueTask DisposeAsync();
     ValueTask<dynamic> GenericRpc(string method, params dynamic[]? args);
     Task<BigInteger> GetBalance(string address, string block = "latest");
+    ValueTask<string> SignTypedData(string label, string value);
+    ValueTask<string> SignTypedDataV4(string typedData);
+
     ValueTask<string> GetSelectedAddress();
     ValueTask<long> GetSelectedChain();
     ValueTask<long> GetTransactionCount();

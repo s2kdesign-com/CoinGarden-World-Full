@@ -9,6 +9,7 @@ using Moralis.AuthApi.Models;
 using Moralis.Network;
 using Moralis.Web3Api.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace CoinGardenWorld.MoralisShared.AzureFunctions
 {
@@ -37,23 +38,7 @@ namespace CoinGardenWorld.MoralisShared.AzureFunctions
 			_logger.LogInformation("C# HTTP trigger function processed a request.");
 			// Create the function execution's context through the request
 			string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-			// Deserialize Playfab context
-			dynamic context = JsonConvert.DeserializeObject(requestBody);
-			var args = context.FunctionArgument;
-
-			// Get the address from the request
-			dynamic address = null;
-			if (args != null && args["address"] != null)
-			{
-				address = args["address"];
-			}
-
-			// Get the chainid from the request
-			dynamic chainid = null;
-			if (args != null && args["chainid"] != null)
-			{
-				chainid = args["chainid"];
-			}
+			var challengeParams= JsonConvert.DeserializeObject<ChallengeRequestDto>(requestBody);
 
 			try
 			{
@@ -66,112 +51,100 @@ namespace CoinGardenWorld.MoralisShared.AzureFunctions
 				// More info here: https://eips.ethereum.org/EIPS/eip-4361#message-field-descriptions
 				ChallengeRequestDto request = new ChallengeRequestDto()
 				{
-					Address = address,
-					ChainId = (long)chainid,
-					Domain = "moralis.io",
-					ExpirationTime = DateTime.UtcNow.AddMinutes(60),
-					NotBefore = DateTime.UtcNow,
-					Resources = new string[] { "https://docs.moralis.io/" },
-					Timeout = 120,
-					Statement = "Please confirm",
-					Uri = "https://moralis.io/"
-				};
+                    // The Ethereum address performing the signing conformant to capitalization encoded
+                    // checksum specified in EIP-55 where applicable.
+                     Address = challengeParams.Address,
+                    // The EIP-155 Chain ID to which the session is bound, and the network where Contract
+                    // Accounts MUST be resolved.
+                    ChainId = (long)challengeParams.ChainId,
+                    // The RFC 3986 authority that is requesting the signing
+                    Domain = "coingarden.world",
+                    // The ISO 8601 datetime string that, if present, indicates when the signed
+                    // authentication message is no longer valid.
+                    ExpirationTime = DateTime.UtcNow.AddDays(1),
+                    // The ISO 8601 datetime string that, if present, indicates when the signed
+                    // authentication message will become valid.
+                    NotBefore = DateTime.UtcNow.AddMinutes(-1),
+                    // A list of information or references to information the user wishes to have resolved
+                    // as part of authentication by the relying party. They are expressed as RFC 3986 URIs
+                    // separated by "\n- " where \n is the byte 0x0a.
+                    Resources = new string[] { "https://coingarden.world" },
+                    // Time is seconds at which point this request becomes invalid.
+                    Timeout = 120,
+                    // A human-readable ASCII assertion that the user will sign, and it must not
+                    // contain '\n' (the byte 0x0a).
+                    Statement = "Please confirm",
+                    // An RFC 3986 URI referring to the resource that is the subject of the signing
+                    // (as in the subject of a claim).
+                    Uri = "https://coingarden.world"
+                };
 
 				ChallengeResponseDto authResult =
 					await AuthenticationApi.AuthEndpoint.Challenge(request, ChainNetworkType.evm);
 
 				var response = req.CreateResponse(HttpStatusCode.OK);
 
-				response.WriteAsJsonAsync(authResult.Message);
+				await response.WriteAsJsonAsync(authResult);
 
 				return response;
 			}
 			catch (ApiException aexp)
 			{
 				_logger.LogDebug($"aexp.Message: {aexp.ToString()}");
+                throw;
 
-				var response = req.CreateResponse(HttpStatusCode.InternalServerError);
-
-				response.WriteAsJsonAsync(aexp.Message);
-
-				return response;
-
-			}
+            }
 			catch (Exception exp)
 			{
 				_logger.LogDebug($"exp.Message: {exp.ToString()}");
-				var response = req.CreateResponse(HttpStatusCode.InternalServerError);
+				throw;
 
-				response.WriteAsJsonAsync(exp.Message);
-
-				return response;
 			}
 		}
 
 
-		[Function("ChallengeVerify")]
-		public async Task<HttpResponseData> ChallengeVerify(
+		[Function("VerifySignature")]
+		public async Task<HttpResponseData> VerifySignature(
 			[HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req)
 		{
-			// Create the function execution's context through the request
-			string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-			// Deserialize Playfab context
-			dynamic context = JsonConvert.DeserializeObject(requestBody);
-			var args = context.FunctionArgument;
+            var completedChallengeParams = await req.ReadFromJsonAsync<CompleteChallengeRequestDto>();
 
-			// Get the message from the request
-			dynamic message = null;
-			if (args != null && args["message"] != null)
-			{
-				message = args["message"];
-			}
-
-			// Get the signature from the request
-			dynamic signature = null;
-			if (args != null && args["signature"] != null)
-			{
-				signature = args["signature"];
-			}
-
-			CompleteChallengeResponseDto authResult = null;
+            CompleteChallengeResponseDto authResult = null;
 
 			try
-			{
+            {
 				// Connect with the Moralis Authtication Server
 				Moralis.AuthApi.MoralisAuthApiClient.Initialize(AuthenticationApiUrl, ApiKey);
-				IAuthClientApi AuthenticationApi = Moralis.AuthApi.MoralisAuthApiClient.AuthenticationApi;
 
-				// Create the authentication message and send it back to the client
-				CompleteChallengeRequestDto request = new CompleteChallengeRequestDto()
-				{
-					Message = message,
-					Signature = signature
-				};
+                IAuthClientApi AuthenticationApi = Moralis.AuthApi.MoralisAuthApiClient.AuthenticationApi;
+				
+				authResult = await AuthenticationApi.AuthEndpoint.CompleteChallenge(completedChallengeParams, ChainNetworkType.evm);
 
-				authResult = await AuthenticationApi.AuthEndpoint.CompleteChallenge(request, ChainNetworkType.evm);
+                // ---------------------------------------------------------------------------------
+                // Here is where you would save authentication information to the database.
+                // ---------------------------------------------------------------------------------
 
-				var response = req.CreateResponse(HttpStatusCode.OK);
+                Dictionary<string, string> claims = new Dictionary<string, string>();
+                claims.Add("Address", authResult.Address);
+                claims.Add("AuthenticationProfileId", authResult.ProfileId);
+                claims.Add("SignatureValidated", "true");
 
-				response.WriteAsJsonAsync(authResult);
+                var response = req.CreateResponse(HttpStatusCode.OK);
+
+				await response.WriteAsJsonAsync(authResult);
 				return response;
 			}
 			catch (ApiException aexp)
 			{
 				_logger.LogDebug($"aexp.Message: {aexp.ToString()}");
 
-				var response = req.CreateResponse(HttpStatusCode.InternalServerError);
-
-				response.WriteAsJsonAsync(aexp.Message);
-				return response;
+				throw aexp;
 			}
 			catch (Exception exp)
 			{
 				_logger.LogDebug($"exp.Message: {exp.ToString()}");
-				var response = req.CreateResponse(HttpStatusCode.InternalServerError);
+                throw exp;
 
-				response.WriteAsJsonAsync(exp.Message);
-
-				return response;
 			}
 			// TODO: This is call to PlayFab to sync game profiles 
 			//try
@@ -225,4 +198,23 @@ namespace CoinGardenWorld.MoralisShared.AzureFunctions
 			//}
 		}
 	}
+    public static class JsonExtensions
+    {
+        public static string ToJson(this object model)
+        {
+            var serializerSettings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                {
+                    NamingStrategy = new CamelCaseNamingStrategy()
+                    {
+                        ProcessDictionaryKeys = false
+                    }
+                },
+
+                DefaultValueHandling = DefaultValueHandling.Ignore
+            };
+            return JsonConvert.SerializeObject(model, serializerSettings);
+        }
+    }
 }

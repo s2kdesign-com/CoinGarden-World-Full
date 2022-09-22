@@ -28,6 +28,7 @@ public class MetaMaskService : IAsyncDisposable, IMetaMaskService
     public ValueTask<IJSObjectReference> LoadScripts(IJSRuntime jsRuntime)
     {
         //await jsRuntime.InvokeAsync<IJSObjectReference>("import", "https://cdn.ethers.io/lib/ethers-5.1.0.umd.min.js");
+        jsRuntime.InvokeAsync<IJSObjectReference>("import", "https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js");
         return jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/CoinGardenWorld.Moralis.Metamask/metaMaskJsInterop.js");
     }
 
@@ -102,6 +103,34 @@ public class MetaMaskService : IAsyncDisposable, IMetaMaskService
     }
 
 
+
+    public async ValueTask<string> SignTypedData(string label, string value)
+    {
+        var module = await moduleTask.Value;
+        try
+        {
+            return await module.InvokeAsync<string>("signTypedData", label, value);
+        }
+        catch (Exception ex)
+        {
+            HandleExceptions(ex);
+            throw;
+        }
+    }
+
+    public async ValueTask<string> SignTypedDataV4(string typedData)
+    {
+        var module = await moduleTask.Value;
+        try
+        {
+            return await module.InvokeAsync<string>("signTypedDataV4", typedData);
+        }
+        catch (Exception ex)
+        {
+            HandleExceptions(ex);
+            throw;
+        }
+    }
     public async ValueTask<string> GetSelectedAddress()
     {
         var module = await moduleTask.Value;

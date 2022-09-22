@@ -1,6 +1,8 @@
 ﻿@page "/"
 @using CoinGardenWorld.Moralis.Metamask
 @using System.Numerics
+
+
 @inject HttpClient httpClient
 @inject IMetaMaskService metamask
 
@@ -58,6 +60,7 @@ else
     private async Task MetaMaskService_AccountChangedEvent(string arg)
     {
         Address = arg;
+
         StateHasChanged();
     }
 

@@ -11,10 +11,12 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddMetaMask(this IServiceCollection services)
+        public static IServiceCollection AddMetaMask(this IServiceCollection services, Uri baseAddress)
         {
 
             services.AddScoped<IMetaMaskService>(sp => new MetaMaskService(sp.GetRequiredService<IJSRuntime>()));
+
+            services.AddScoped(sp => new HttpClient { BaseAddress = baseAddress });
 
             return services;
         }

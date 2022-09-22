@@ -1,12 +1,18 @@
 ﻿using CoinGardenWorld.Moralis.Metamask.Exceptions;
 using Microsoft.AspNetCore.Components;
+using Moralis.AuthApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Numerics;
 using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using CoinGardenWorld.Moralis.Metamask.Extensions;
+using CoinGardenWorld.Moralis.Metamask.Models;
 
 namespace CoinGardenWorld.Moralis.Metamask.Shared
 {
@@ -14,16 +20,20 @@ namespace CoinGardenWorld.Moralis.Metamask.Shared
     {
         [Inject]
         public IMetaMaskService MetaMaskService { get; set; } = default!;
+        [Inject]
+        private HttpClient client { get; set; } = default!;
 
         public bool HasMetaMask { get; set; }
-        public string? SelectedChain { get; set; }
+        public long? SelectedChain { get; set; }
         public string? TransactionCount { get; set; }
 
         public string Message { get; set; }
         public bool IsSiteConnected { get; set; }
+        public bool IsMoralisVerified { get; set; }
         public string? EthAddress { get; set; }
         public string EthAddressShort { get; set; }
         public string EthBalance { get; set; }
+        public string JwtToken { get; set; }
 
 
         protected override async Task OnInitializedAsync()
@@ -48,7 +58,13 @@ namespace CoinGardenWorld.Moralis.Metamask.Shared
         private async Task LoginWithMetamask()
         {
             await MetaMaskService.ConnectMetaMask();
-            await GetSelectedAddress();
+            var address = await GetSelectedAddress();
+            var chain = await GetSelectedNetwork();
+
+            if (!string.IsNullOrEmpty(EthAddress))
+            {
+                MoralisChallenge(address, chain);
+            }
             StateHasChanged();
         }
         private async Task LogoutMetamask()
@@ -74,9 +90,81 @@ namespace CoinGardenWorld.Moralis.Metamask.Shared
                 StateHasChanged();
                 return;
             }
+            else
+            {
+                // TODO: Remove that 
+                if (!string.IsNullOrEmpty(arg))
+                {
+                    MoralisChallenge(arg, SelectedChain ?? 0);
+                }
+            }
             await GetSelectedAddress();
             await GetBalance();
             StateHasChanged();
+        }
+
+        private async Task MoralisChallenge(string address, long chainId)
+        {
+            var chalengeResult = await client.PostAsJsonAsync("api/ChallengeRequest", new { address = address, chainid = chainId });
+            if (chalengeResult.IsSuccessStatusCode)
+            {
+                var resultMessage =
+                    JsonConvert.DeserializeObject<ChallengeResponseDto>(await chalengeResult.Content.ReadAsStringAsync());
+
+                var data = new TypedDataPayload<Message>
+                {
+                    Domain = new Domain
+                    {
+                        Name = "CGW Store",
+                        Version = "1",
+                        ChainId = chainId
+                    },
+                    Types = new Dictionary<string, TypeMemberValue[]>
+                    {
+                        ["EIP712Domain"] = new[]
+                        {
+                                new TypeMemberValue { Name = "name", Type = "string" },
+                                new TypeMemberValue { Name = "version", Type = "string" },
+                                new TypeMemberValue { Name = "chainId", Type = "uint256" }
+                            },
+                        ["Message"] = new[]
+                        {
+                            new TypeMemberValue { Name = "contents", Type = "string" }
+                        }
+                    },
+                    PrimaryType = "Message",
+                    Message = new Message
+                    {
+                        contents = resultMessage.Message
+                    }
+                };
+                var signature = await MetaMaskService.SignTypedDataV4(data.ToJson());
+
+                // TODO: Remove
+                Console.WriteLine(signature);
+
+                var validationResult = await client.PostAsJsonAsync("api/VerifySignature", new
+                {
+                    message = resultMessage.Message,
+                    signature
+                });
+                if (validationResult.IsSuccessStatusCode)
+                {
+                    JwtToken = await validationResult.Content.ReadAsStringAsync();
+                    IsMoralisVerified = true;
+                }
+                else
+                {
+
+                    Console.WriteLine(await validationResult.Content.ReadAsStringAsync());
+                }
+            }
+            else
+            {
+
+                Console.WriteLine(await chalengeResult.Content.ReadAsStringAsync());
+            }
+
         }
 
 
@@ -93,12 +181,14 @@ namespace CoinGardenWorld.Moralis.Metamask.Shared
             return EthAddress;
         }
 
-        public async Task GetSelectedNetwork()
+        public async Task<long> GetSelectedNetwork()
         {
             var chainId = await MetaMaskService.GetSelectedChain();
 
-            SelectedChain = $"ChainID: {chainId}";
+            SelectedChain = chainId;
             Console.WriteLine($"ChainID: {chainId}");
+
+            return chainId;
         }
 
         public async Task GetTransactionCount()
@@ -106,7 +196,7 @@ namespace CoinGardenWorld.Moralis.Metamask.Shared
             var transactionCount = await MetaMaskService.GetTransactionCount();
             TransactionCount = $"Transaction count: {transactionCount}";
         }
-        
+
         public async Task GetBalance()
         {
             var address = await MetaMaskService.GetSelectedAddress();
