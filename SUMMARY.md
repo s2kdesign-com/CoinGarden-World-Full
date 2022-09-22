@@ -1,26 +1,44 @@
 # Table of contents
 
-* [CoinGarden.World](README.md)
+* ["World of Flowers" - Home 🏡](README.md)
 
-## Guides
+## Architecture
 
-* [Creating your first project](guides/creating-your-first-project.md)
-* [Creating your first task](guides/creating-your-first-task.md)
-* [Advanced permissions](guides/advanced-permissions.md)
+* [Way of working  👨‍🏫](architecture/way-of-working.md)
+* [User Flow diagram 🧑‍🌾](architecture/user-flow-diagram.md)
+* [Mobile Application 🤳](architecture/mobile-application/README.md)
+  * [1. Take a picture of the flower](architecture/mobile-application/1.-take-a-picture-of-the-flower.md)
+  * [2. Identify the flower](architecture/mobile-application/2.-identify-the-flower.md)
+  * [3. Receive a QR code of a flower](architecture/mobile-application/3.-receive-a-qr-code-of-a-flower.md)
+  * [4. Get a reminder](architecture/mobile-application/4.-get-a-reminder.md)
+* [NFT - Flower Shop 🏪](architecture/nft-flower-shop/README.md)
+  * [1. Add flower as NFT](architecture/nft-flower-shop/1.-add-flower-as-nft.md)
+  * [2. Sell NFT photo](architecture/nft-flower-shop/2.-sell-nft-photo.md)
+  * [3. Sell a real flower](architecture/nft-flower-shop/3.-sell-a-real-flower.md)
+* [Donations and causes 😇](architecture/donations-and-causes/README.md)
+  * [1. How to save a polluted place](architecture/donations-and-causes/1.-how-to-save-a-polluted-place.md)
+  * [2. How to donate to charity](architecture/donations-and-causes/2.-how-to-donate-to-charity.md)
+* [Metaverse 🌐](architecture/metaverse/README.md)
+  * [1. Start a game](architecture/metaverse/1.-start-a-game.md)
+  * [2. Raise your level](architecture/metaverse/2.-raise-your-level.md)
+  * [3. Earn cryptocurrency](architecture/metaverse/3.-earn-cryptocurrency.md)
+  * [4. Decorate your island](architecture/metaverse/4.-decorate-your-island.md)
+* [GRDN - Crypto Token 🪙](architecture/grdn-crypto-token/README.md)
+  * [1. Tokenomics](architecture/grdn-crypto-token/1.-tokenomics.md)
 
-## Fundamentals
+## Flowers and gardens
 
-* [Projects](fundamentals/projects.md)
-* [Members](fundamentals/members.md)
-* [Task Lists](fundamentals/task-lists.md)
+* [Description of flower and garden levels 🧾](flowers-and-gardens/description-of-flower-and-garden-levels.md)
+* [Properties of Flowers 🌸](flowers-and-gardens/properties-of-flowers.md)
+* [Properties of the Gardens 💐](flowers-and-gardens/properties-of-the-gardens.md)
 
-## Use Cases
+## Users
 
-* [For Designers](use-cases/for-designers/README.md)
-  * [Figma Integration](use-cases/for-designers/figma-integration.md)
-* [For Support](use-cases/for-support/README.md)
-  * [Intercom Integration](use-cases/for-support/intercom-integration.md)
+* [Contribution Badges 🥇](users/contribution-badges/README.md)
+  * [Nature Badges 🪴](users/contribution-badges/nature-badges.md)
+  * [Social Badges 🧑‍🌾](users/contribution-badges/social-badges.md)
 
-## Extras
+## Development
 
-* [Keyboard Shortcuts](extras/keyboard-shortcuts.md)
+* [Infrastructure 🏙️](development/infrastructure.md)
+* [Used technologies 👩‍🔧](development/used-technologies.md)
