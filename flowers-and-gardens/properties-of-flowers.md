@@ -16,4 +16,4 @@
 * Level
   * Every second photo of the same flower increases its level
 
-![NFT Store properties](<../.gitbook/assets/image (4).png>)
+![NFT Store properties](<../.gitbook/assets/image (4) (1).png>)
